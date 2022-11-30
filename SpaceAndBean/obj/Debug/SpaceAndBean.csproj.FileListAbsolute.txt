@@ -1,0 +1,11 @@
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\bin\Debug\SpaceAndBean.exe.config
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\bin\Debug\SpaceAndBean.exe
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\bin\Debug\SpaceAndBean.pdb
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.AssemblyReference.cache
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.SuggestedBindingRedirects.cache
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.Properties.Resources.resources
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.GenerateResource.cache
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CoreCompileInputs.cache
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.exe
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.pdb
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.Form1.resources
