@@ -48,6 +48,11 @@ namespace SpaceAndBean
                 String[] data = (String[]) Program.material_cards_basic[i];
                 MATERIAL_VIEW.Rows.Add(data);
             }
+            for (int i = 0; i < Program.tally_cards_basic.Count; i++)
+            {
+                String[] data = (String[]) Program.tally_cards_basic[i];
+                TALLY_VIEW.Rows.Add(data);
+            }
 
             for (int i = 100; i < 600; i++)
             {
@@ -94,16 +99,23 @@ namespace SpaceAndBean
 
         private void MATERIAL_DEL_Click(object sender, EventArgs e)
         {
+            int index = MATERIAL_VIEW.CurrentRow.Index;
+            MATERIAL_VIEW.Rows.Remove(MATERIAL_VIEW.Rows[index]);
             //throw new System.NotImplementedException();
         }
 
         private void TALLY_ADD_Click(object sender, EventArgs e)
         {
+            int index = TALLY_VIEW.CurrentRow.Index;
+            String[] data = {"", "", "", "", ""};
+            TALLY_VIEW.Rows.Insert(index+1, data);
             //throw new System.NotImplementedException();
         }
 
         private void TALLY_DEL_Click(object sender, EventArgs e)
         {
+            int index = TALLY_VIEW.CurrentRow.Index;
+            TALLY_VIEW.Rows.Remove(TALLY_VIEW.Rows[index]);
             //throw new System.NotImplementedException();
         }
     }

@@ -66,7 +66,7 @@ namespace SpaceAndBean
             int source_cards_buffer = 0;
             int material_cards_buffer = 0;
             int tally_cards_buffer = 0;
-            char[] delimiterChars = { ' ' };
+            char[] delimiterChars = { ' ', ':' };
             string material_stack = "";
             while (sr.Peek() >= 0) 
             {
@@ -154,6 +154,7 @@ namespace SpaceAndBean
                 }
                 if (surface_cards_buffer == 1)
                 {
+                    
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     surface_cards_basic.Add(words);
                 }

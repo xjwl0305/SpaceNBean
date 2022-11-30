@@ -57,6 +57,11 @@ namespace SpaceAndBean
             this.SURFACE_VIEW = new System.Windows.Forms.DataGridView();
             this.MATERIAL_CARD = new System.Windows.Forms.Label();
             this.MATERIAL_VIEW = new System.Windows.Forms.DataGridView();
+            this.M_MAT_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAT_ATOM_INDEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAT_ATOM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.M_MAT_DEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.M_ANNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TALLY_CARD = new System.Windows.Forms.Label();
             this.TALLY_VIEW = new System.Windows.Forms.DataGridView();
             this.Save = new System.Windows.Forms.Button();
@@ -68,11 +73,9 @@ namespace SpaceAndBean
             this.MATERIAL_DEL = new System.Windows.Forms.Button();
             this.TALLY_ADD = new System.Windows.Forms.Button();
             this.TALLY_DEL = new System.Windows.Forms.Button();
-            this.M_MAT_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAT_ATOM_INDEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAT_ATOM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.M_MAT_DEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.M_ANNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TALLY_INDEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TALLY_PAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TALLY_IMP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CELL_CARD_VIEW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SURFACE_VIEW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MATERIAL_VIEW)).BeginInit();
@@ -268,6 +271,36 @@ namespace SpaceAndBean
             this.MATERIAL_VIEW.Size = new System.Drawing.Size(698, 314);
             this.MATERIAL_VIEW.TabIndex = 17;
             // 
+            // M_MAT_NUM
+            // 
+            this.M_MAT_NUM.HeaderText = "M_MAT_NUM";
+            this.M_MAT_NUM.Name = "M_MAT_NUM";
+            this.M_MAT_NUM.Width = 130;
+            // 
+            // MAT_ATOM_INDEX
+            // 
+            this.MAT_ATOM_INDEX.HeaderText = "MAT_ATOM_INDEX";
+            this.MAT_ATOM_INDEX.Name = "MAT_ATOM_INDEX";
+            this.MAT_ATOM_INDEX.Width = 130;
+            // 
+            // MAT_ATOM_QTY
+            // 
+            this.MAT_ATOM_QTY.HeaderText = "MAT_ATOM_QTY";
+            this.MAT_ATOM_QTY.Name = "MAT_ATOM_QTY";
+            this.MAT_ATOM_QTY.Width = 130;
+            // 
+            // M_MAT_DEN
+            // 
+            this.M_MAT_DEN.HeaderText = "M_MAT_DEN";
+            this.M_MAT_DEN.Name = "M_MAT_DEN";
+            this.M_MAT_DEN.Width = 130;
+            // 
+            // M_ANNO
+            // 
+            this.M_ANNO.HeaderText = "M_ANNO";
+            this.M_ANNO.Name = "M_ANNO";
+            this.M_ANNO.Width = 130;
+            // 
             // TALLY_CARD
             // 
             this.TALLY_CARD.Location = new System.Drawing.Point(20, 1266);
@@ -279,6 +312,7 @@ namespace SpaceAndBean
             // TALLY_VIEW
             // 
             this.TALLY_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TALLY_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.TALLY_INDEX, this.TALLY_PAR, this.TALLY_IMP });
             this.TALLY_VIEW.Location = new System.Drawing.Point(31, 1295);
             this.TALLY_VIEW.Name = "TALLY_VIEW";
             this.TALLY_VIEW.RowTemplate.Height = 23;
@@ -375,35 +409,23 @@ namespace SpaceAndBean
             this.TALLY_DEL.UseVisualStyleBackColor = true;
             this.TALLY_DEL.Click += new System.EventHandler(this.TALLY_DEL_Click);
             // 
-            // M_MAT_NUM
+            // TALLY_INDEX
             // 
-            this.M_MAT_NUM.HeaderText = "M_MAT_NUM";
-            this.M_MAT_NUM.Name = "M_MAT_NUM";
-            this.M_MAT_NUM.Width = 130;
+            this.TALLY_INDEX.HeaderText = "TALLY_INDEX";
+            this.TALLY_INDEX.Name = "TALLY_INDEX";
+            this.TALLY_INDEX.Width = 200;
             // 
-            // MAT_ATOM_INDEX
+            // TALLY_PAR
             // 
-            this.MAT_ATOM_INDEX.HeaderText = "MAT_ATOM_INDEX";
-            this.MAT_ATOM_INDEX.Name = "MAT_ATOM_INDEX";
-            this.MAT_ATOM_INDEX.Width = 130;
+            this.TALLY_PAR.HeaderText = "TALLY_PAR";
+            this.TALLY_PAR.Name = "TALLY_PAR";
+            this.TALLY_PAR.Width = 200;
             // 
-            // MAT_ATOM_QTY
+            // TALLY_IMP
             // 
-            this.MAT_ATOM_QTY.HeaderText = "MAT_ATOM_QTY";
-            this.MAT_ATOM_QTY.Name = "MAT_ATOM_QTY";
-            this.MAT_ATOM_QTY.Width = 130;
-            // 
-            // M_MAT_DEN
-            // 
-            this.M_MAT_DEN.HeaderText = "M_MAT_DEN";
-            this.M_MAT_DEN.Name = "M_MAT_DEN";
-            this.M_MAT_DEN.Width = 130;
-            // 
-            // M_ANNO
-            // 
-            this.M_ANNO.HeaderText = "M_ANNO";
-            this.M_ANNO.Name = "M_ANNO";
-            this.M_ANNO.Width = 130;
+            this.TALLY_IMP.HeaderText = "TALLY_IMP";
+            this.TALLY_IMP.Name = "TALLY_IMP";
+            this.TALLY_IMP.Width = 200;
             // 
             // Form1
             // 
@@ -452,6 +474,10 @@ namespace SpaceAndBean
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn TALLY_INDEX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TALLY_PAR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TALLY_IMP;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn M_ANNO;
 
