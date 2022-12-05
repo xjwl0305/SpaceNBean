@@ -9,3 +9,14 @@ C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.csp
 C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.exe
 C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.pdb
 C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.Form1.resources
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\SpaceAndBean.exe.config
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\SpaceAndBean.exe
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\SpaceAndBean.pdb
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.AssemblyReference.cache
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.SuggestedBindingRedirects.cache
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.Form1.resources
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.Properties.Resources.resources
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.GenerateResource.cache
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CoreCompileInputs.cache
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.exe
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.pdb
