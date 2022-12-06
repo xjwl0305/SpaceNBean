@@ -55,6 +55,18 @@ namespace SpaceAndBean
             this.ANNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SURFACE_CARD = new System.Windows.Forms.Label();
             this.SURFACE_VIEW = new System.Windows.Forms.DataGridView();
+            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUF_NUM_PX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUF_NUM_PY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUF_NUM_PY2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PY2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUF_NUM_PZ1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PZ1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUF_NUM_PZ2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PZ2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MATERIAL_CARD = new System.Windows.Forms.Label();
             this.MATERIAL_VIEW = new System.Windows.Forms.DataGridView();
             this.M_MAT_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,18 +76,16 @@ namespace SpaceAndBean
             this.M_ANNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TALLY_CARD = new System.Windows.Forms.Label();
             this.TALLY_VIEW = new System.Windows.Forms.DataGridView();
+            this.TALLY_INDEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TALLY_PAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TALLY_IMP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Save = new System.Windows.Forms.Button();
             this.CELL_ADD = new System.Windows.Forms.Button();
             this.CELL_DEL = new System.Windows.Forms.Button();
             this.SURFACE_ADD = new System.Windows.Forms.Button();
             this.SURFACE_DEL = new System.Windows.Forms.Button();
-            this.MATERIAL_ADD = new System.Windows.Forms.Button();
-            this.MATERIAL_DEL = new System.Windows.Forms.Button();
             this.TALLY_ADD = new System.Windows.Forms.Button();
             this.TALLY_DEL = new System.Windows.Forms.Button();
-            this.TALLY_INDEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TALLY_PAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TALLY_IMP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CELL_CARD_VIEW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SURFACE_VIEW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MATERIAL_VIEW)).BeginInit();
@@ -247,11 +257,72 @@ namespace SpaceAndBean
             // SURFACE_VIEW
             // 
             this.SURFACE_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SURFACE_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.index, this.category, this.SUF_NUM_PX2, this.value, this.SUF_NUM_PY1, this.PY1, this.SUF_NUM_PY2, this.PY2, this.SUF_NUM_PZ1, this.PZ1, this.SUF_NUM_PZ2, this.PZ2 });
             this.SURFACE_VIEW.Location = new System.Drawing.Point(26, 501);
             this.SURFACE_VIEW.Name = "SURFACE_VIEW";
             this.SURFACE_VIEW.RowTemplate.Height = 23;
             this.SURFACE_VIEW.Size = new System.Drawing.Size(705, 291);
             this.SURFACE_VIEW.TabIndex = 15;
+            // 
+            // index
+            // 
+            this.index.HeaderText = "SUF_NUM_PX1";
+            this.index.Name = "index";
+            // 
+            // category
+            // 
+            this.category.HeaderText = "PX1";
+            this.category.Name = "category";
+            // 
+            // SUF_NUM_PX2
+            // 
+            this.SUF_NUM_PX2.HeaderText = "SUF_NUM_PX2";
+            this.SUF_NUM_PX2.Name = "SUF_NUM_PX2";
+            // 
+            // value
+            // 
+            this.value.HeaderText = "PX2";
+            this.value.Name = "value";
+            // 
+            // SUF_NUM_PY1
+            // 
+            this.SUF_NUM_PY1.HeaderText = "SUF_NUM_PY1";
+            this.SUF_NUM_PY1.Name = "SUF_NUM_PY1";
+            // 
+            // PY1
+            // 
+            this.PY1.HeaderText = "PY1";
+            this.PY1.Name = "PY1";
+            // 
+            // SUF_NUM_PY2
+            // 
+            this.SUF_NUM_PY2.HeaderText = "SUF_NUM_PY2";
+            this.SUF_NUM_PY2.Name = "SUF_NUM_PY2";
+            // 
+            // PY2
+            // 
+            this.PY2.HeaderText = "PY2";
+            this.PY2.Name = "PY2";
+            // 
+            // SUF_NUM_PZ1
+            // 
+            this.SUF_NUM_PZ1.HeaderText = "SUF_NUM_PZ1";
+            this.SUF_NUM_PZ1.Name = "SUF_NUM_PZ1";
+            // 
+            // PZ1
+            // 
+            this.PZ1.HeaderText = "PZ1";
+            this.PZ1.Name = "PZ1";
+            // 
+            // SUF_NUM_PZ2
+            // 
+            this.SUF_NUM_PZ2.HeaderText = "SUF_NUM_PZ2";
+            this.SUF_NUM_PZ2.Name = "SUF_NUM_PZ2";
+            // 
+            // PZ2
+            // 
+            this.PZ2.HeaderText = "PZ2";
+            this.PZ2.Name = "PZ2";
             // 
             // MATERIAL_CARD
             // 
@@ -319,6 +390,24 @@ namespace SpaceAndBean
             this.TALLY_VIEW.Size = new System.Drawing.Size(698, 168);
             this.TALLY_VIEW.TabIndex = 19;
             // 
+            // TALLY_INDEX
+            // 
+            this.TALLY_INDEX.HeaderText = "TALLY_INDEX";
+            this.TALLY_INDEX.Name = "TALLY_INDEX";
+            this.TALLY_INDEX.Width = 200;
+            // 
+            // TALLY_PAR
+            // 
+            this.TALLY_PAR.HeaderText = "TALLY_PAR";
+            this.TALLY_PAR.Name = "TALLY_PAR";
+            this.TALLY_PAR.Width = 200;
+            // 
+            // TALLY_IMP
+            // 
+            this.TALLY_IMP.HeaderText = "TALLY_IMP";
+            this.TALLY_IMP.Name = "TALLY_IMP";
+            this.TALLY_IMP.Width = 200;
+            // 
             // Save
             // 
             this.Save.Location = new System.Drawing.Point(633, 1558);
@@ -369,26 +458,6 @@ namespace SpaceAndBean
             this.SURFACE_DEL.UseVisualStyleBackColor = true;
             this.SURFACE_DEL.Click += new System.EventHandler(this.SURFACE_DEL_Click);
             // 
-            // MATERIAL_ADD
-            // 
-            this.MATERIAL_ADD.Location = new System.Drawing.Point(514, 1211);
-            this.MATERIAL_ADD.Name = "MATERIAL_ADD";
-            this.MATERIAL_ADD.Size = new System.Drawing.Size(94, 34);
-            this.MATERIAL_ADD.TabIndex = 25;
-            this.MATERIAL_ADD.Text = "ADD";
-            this.MATERIAL_ADD.UseVisualStyleBackColor = true;
-            this.MATERIAL_ADD.Click += new System.EventHandler(this.MATERIAL_ADD_Click);
-            // 
-            // MATERIAL_DEL
-            // 
-            this.MATERIAL_DEL.Location = new System.Drawing.Point(622, 1211);
-            this.MATERIAL_DEL.Name = "MATERIAL_DEL";
-            this.MATERIAL_DEL.Size = new System.Drawing.Size(91, 34);
-            this.MATERIAL_DEL.TabIndex = 26;
-            this.MATERIAL_DEL.Text = "DEL";
-            this.MATERIAL_DEL.UseVisualStyleBackColor = true;
-            this.MATERIAL_DEL.Click += new System.EventHandler(this.MATERIAL_DEL_Click);
-            // 
             // TALLY_ADD
             // 
             this.TALLY_ADD.Location = new System.Drawing.Point(514, 1469);
@@ -409,24 +478,6 @@ namespace SpaceAndBean
             this.TALLY_DEL.UseVisualStyleBackColor = true;
             this.TALLY_DEL.Click += new System.EventHandler(this.TALLY_DEL_Click);
             // 
-            // TALLY_INDEX
-            // 
-            this.TALLY_INDEX.HeaderText = "TALLY_INDEX";
-            this.TALLY_INDEX.Name = "TALLY_INDEX";
-            this.TALLY_INDEX.Width = 200;
-            // 
-            // TALLY_PAR
-            // 
-            this.TALLY_PAR.HeaderText = "TALLY_PAR";
-            this.TALLY_PAR.Name = "TALLY_PAR";
-            this.TALLY_PAR.Width = 200;
-            // 
-            // TALLY_IMP
-            // 
-            this.TALLY_IMP.HeaderText = "TALLY_IMP";
-            this.TALLY_IMP.Name = "TALLY_IMP";
-            this.TALLY_IMP.Width = 200;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -434,11 +485,9 @@ namespace SpaceAndBean
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(100, 100);
             this.AutoScrollMinSize = new System.Drawing.Size(200, 200);
-            this.ClientSize = new System.Drawing.Size(806, 518);
+            this.ClientSize = new System.Drawing.Size(823, 535);
             this.Controls.Add(this.TALLY_DEL);
             this.Controls.Add(this.TALLY_ADD);
-            this.Controls.Add(this.MATERIAL_DEL);
-            this.Controls.Add(this.MATERIAL_ADD);
             this.Controls.Add(this.SURFACE_DEL);
             this.Controls.Add(this.SURFACE_ADD);
             this.Controls.Add(this.CELL_DEL);
@@ -465,7 +514,7 @@ namespace SpaceAndBean
             this.Controls.Add(this.PY_START);
             this.Controls.Add(this.PX_START);
             this.Name = "Form1";
-            this.Text = "SpaceNBean";
+            this.Text = "NoriSpace";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CELL_CARD_VIEW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SURFACE_VIEW)).EndInit();
@@ -474,6 +523,21 @@ namespace SpaceAndBean
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PX2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PY1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PY2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PZ1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PZ2;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn PY1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PY2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PZ1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PZ2;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn index;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn value;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn TALLY_INDEX;
         private System.Windows.Forms.DataGridViewTextBoxColumn TALLY_PAR;
@@ -500,8 +564,6 @@ namespace SpaceAndBean
         private System.Windows.Forms.Button CELL_DEL;
         private System.Windows.Forms.Button SURFACE_ADD;
         private System.Windows.Forms.Button SURFACE_DEL;
-        private System.Windows.Forms.Button MATERIAL_ADD;
-        private System.Windows.Forms.Button MATERIAL_DEL;
         private System.Windows.Forms.Button TALLY_ADD;
         private System.Windows.Forms.Button TALLY_DEL;
 

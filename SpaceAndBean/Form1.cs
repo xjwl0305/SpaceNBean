@@ -1,5 +1,8 @@
 using System;
+using System.Collections;
+using System.Linq;
 using System.Windows.Forms;
+using SpaceAndBean.RandomCreate;
 
 namespace SpaceAndBean
 {
@@ -7,7 +10,6 @@ namespace SpaceAndBean
     {
         public Form1()
         {
-            
             InitializeComponent();
         }
         
@@ -43,11 +45,15 @@ namespace SpaceAndBean
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Program.CreateBasic();
+            
+            
             for (int i = 0; i < Program.material_cards_basic.Count; i++)
             {
                 String[] data = (String[]) Program.material_cards_basic[i];
                 MATERIAL_VIEW.Rows.Add(data);
             }
+
             for (int i = 0; i < Program.tally_cards_basic.Count; i++)
             {
                 String[] data = (String[]) Program.tally_cards_basic[i];
@@ -60,6 +66,23 @@ namespace SpaceAndBean
                 MATERIAL_VIEW.Rows.Add(data);
             }
             //throw new System.NotImplementedException();
+            
+            int index = 0;
+            for (int i = 0; i < Program.surface_cards_basic.Count; i++)
+            {
+                String[] data1 = (String[])Program.surface_cards_basic[i];
+                SURFACE_VIEW.Rows.Add(data1);
+                
+                
+            }
+            
+            Program.cell_cards_basic.AddRange(MakeCellCard.Make(Program.material_cards_basic, Program.surface_cards_basic));
+            for (int i = 0; i < Program.cell_cards_basic.Count; i++)
+            {
+                String[] data = (String[]) Program.cell_cards_basic[i];
+                CELL_CARD_VIEW.Rows.Add(data);
+            }
+            
         }
 
         private void Save_Click(object sender, EventArgs e)

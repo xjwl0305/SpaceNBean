@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SpaceAndBean.RandomCreate;
 
 namespace SpaceAndBean
 {
@@ -18,6 +19,8 @@ namespace SpaceAndBean
         public static ArrayList source_cards_basic = new ArrayList();
         public static ArrayList material_cards_basic = new ArrayList();
         public static ArrayList tally_cards_basic = new ArrayList();
+        
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -41,12 +44,20 @@ namespace SpaceAndBean
             }
             String basic_path = @"C:\basic_File\a_ne_2.txt";
             ReadBasic(basic_path);
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MaterialInputForm());
             
             
         }
+
+        public static void CreateBasic(int cellCardCound, double pxStart, double pxEnd, double pyStart, double pyEnd, double pzStart, double pzEnd)
+        {
+            surface_cards_basic.AddRange(MakeSurfaceCard.Make(9, -100, 100, -100, 1000, -120, 120));
+        }
+        
+        
         public static void ReadBasic(String basic_path)
         {
             // basic file 한줄 씩 읽기
