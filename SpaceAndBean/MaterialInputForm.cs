@@ -16,6 +16,7 @@ namespace SpaceAndBean
 
         private void MaterialInputForm_Load()
         {
+            //TODO 이거 나중에 빼야함. 지금은 테스트용
             for (int i = 0; i < Program.material_cards_basic.Count; i++)
             {
                 String[] data = (String[]) Program.material_cards_basic[i];
@@ -26,6 +27,8 @@ namespace SpaceAndBean
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.material_cards_basic.Clear();
+            
+            // 테이블 요소들을 다음 Form에 전달해야 함.
             for (int i = 0; i < MATERIAL_VIEW.Rows.Count; i++)
             {
                 if (MATERIAL_VIEW.Rows[i].Cells[0].Value == null)
@@ -45,8 +48,16 @@ namespace SpaceAndBean
                     }
                     
                 }
-                Program.material_cards_basic.Add(data);
+                Program.MaterialCardArrayList.Add(data);
             }
+            
+            // VAR_INPUT 전달
+            Program.var_inputs[0] = PX_START.Text;
+            Program.var_inputs[1] = PX_END.Text;
+            Program.var_inputs[2] = PY_START.Text;
+            Program.var_inputs[3] = PY_END.Text;
+            Program.var_inputs[4] = PZ_START.Text;
+            Program.var_inputs[5] = PZ_END.Text;
             Form1 form1 = new Form1();
             form1.ShowDialog();
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
+using SpaceAndBean.IO;
 using SpaceAndBean.RandomCreate;
 
 namespace SpaceAndBean
@@ -45,41 +46,42 @@ namespace SpaceAndBean
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Program.CreateBasic();
+            Program.CreateBasic();
             
             
-            for (int i = 0; i < Program.material_cards_basic.Count; i++)
+            for (int i = 0; i < Program.MaterialCardArrayList.Count; i++)
             {
-                String[] data = (String[]) Program.material_cards_basic[i];
+                String[] data = (String[]) Program.MaterialCardArrayList[i];
                 MATERIAL_VIEW.Rows.Add(data);
             }
-
+            /*
             for (int i = 0; i < Program.tally_cards_basic.Count; i++)
             {
                 String[] data = (String[]) Program.tally_cards_basic[i];
                 TALLY_VIEW.Rows.Add(data);
             }
-
+            
+            
             for (int i = 100; i < 600; i++)
             {
                 String[] data = {"m"+i.ToString(), "", "", "", ""};
                 MATERIAL_VIEW.Rows.Add(data);
             }
+            */
             //throw new System.NotImplementedException();
             
             int index = 0;
-            for (int i = 0; i < Program.surface_cards_basic.Count; i++)
+            for (int i = 0; i < Program.SurfaceCardArrayList.Count; i++)
             {
-                String[] data1 = (String[])Program.surface_cards_basic[i];
+                String[] data1 = (String[])Program.SurfaceCardArrayList[i];
                 SURFACE_VIEW.Rows.Add(data1);
-                
-                
+
             }
             
-            Program.cell_cards_basic.AddRange(MakeCellCard.Make(Program.material_cards_basic, Program.surface_cards_basic));
-            for (int i = 0; i < Program.cell_cards_basic.Count; i++)
+            //Program.cell_cards_basic.AddRange();
+            for (int i = 0; i < Program.CellCardArrayList.Count; i++)
             {
-                String[] data = (String[]) Program.cell_cards_basic[i];
+                String[] data = (String[]) Program.CellCardArrayList[i];
                 CELL_CARD_VIEW.Rows.Add(data);
             }
             
@@ -87,6 +89,7 @@ namespace SpaceAndBean
 
         private void Save_Click(object sender, EventArgs e)
         {
+            SaveInput.Save("result.txt", CELL_CARD_VIEW.Rows, SURFACE_VIEW.Rows, MATERIAL_VIEW.Rows, TALLY_VIEW.Rows);
             //throw new System.NotImplementedException();
         }
 

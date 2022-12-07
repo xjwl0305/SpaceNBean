@@ -28,10 +28,7 @@ namespace SpaceAndBean.RandomCreate
 
             int[] checkSurface = Enumerable.Range(startIndex, surfaceCardCount - 1).ToArray();
             ArrayList checkSurfaceArrayList = new ArrayList();
-            checkSurfaceArrayList.AddRange(checkSurface);
-            
-            
-            
+            checkSurfaceArrayList.AddRange(checkSurface); 
             
             //int[] checkMaterial = Enumerable.Range(0, materialCardCount - 1).ToArray();
             //ArrayList checkMaterialArrayList = new ArrayList();
@@ -40,11 +37,11 @@ namespace SpaceAndBean.RandomCreate
             Random random = new Random();
             Random random1 = new Random();
 
-            for (int i = 0; i < surfaceCardCount; i++)
+            for (int i = 0; i < surfaceCardCount-1; i++)
             {
                 int randomIndex = 0;
                 if(checkSurfaceArrayList.Count == 1)
-                    continue;
+                    randomIndex = 0;
                 else
                     randomIndex = random.Next(0, checkSurfaceArrayList.Count - 1);
                 int indexSurface = (int)checkSurfaceArrayList[randomIndex];
@@ -67,7 +64,7 @@ namespace SpaceAndBean.RandomCreate
                 String[] data =
                 {
                     (i+100).ToString(), material, "", 
-                    px1, px2, py1, py2, pz1, pz2, "imp:p=1", "imp:n=1"
+                    px1 + " " + px2 + " " + py1 + " " + py2 + " " + pz1 + " " + pz2, "imp:p=1", "imp:n=1"
                 };
                 cellCardArray.Add(data);
 

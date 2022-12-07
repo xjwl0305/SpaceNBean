@@ -12,6 +12,7 @@ namespace SpaceAndBean
 {
     static class Program
     {
+        // 기본 데이터들
         public static StringBuilder input_data = new StringBuilder();
         public static ArrayList cell_cards_basic = new ArrayList();
         public static ArrayList surface_cards_basic = new ArrayList();
@@ -19,7 +20,21 @@ namespace SpaceAndBean
         public static ArrayList source_cards_basic = new ArrayList();
         public static ArrayList material_cards_basic = new ArrayList();
         public static ArrayList tally_cards_basic = new ArrayList();
+
+        public static ArrayList CellCardBasic = new ArrayList();
+        public static ArrayList SurfaceCardBasic = new ArrayList();
+        public static ArrayList DataCardBasic = new ArrayList();
+        public static ArrayList SourceCardBasic = new ArrayList();
+        public static ArrayList MaterialCardBasic = new ArrayList();
+        public static ArrayList TallyCardBasic = new ArrayList();
+
+        // 자동생성 및 VAR_INPUT ArrayList
+        public static ArrayList CellCardArrayList = new ArrayList();
+        public static ArrayList SurfaceCardArrayList = new ArrayList();
+        public static ArrayList MaterialCardArrayList = new ArrayList();
+        public static ArrayList TallyCardArrayList = new ArrayList();
         
+        public static String[] var_inputs = new String[6];
         
         /// <summary>
         /// The main entry point for the application.
@@ -52,9 +67,18 @@ namespace SpaceAndBean
             
         }
 
-        public static void CreateBasic(int cellCardCound, double pxStart, double pxEnd, double pyStart, double pyEnd, double pzStart, double pzEnd)
+        public static void CreateBasic()
         {
-            surface_cards_basic.AddRange(MakeSurfaceCard.Make(9, -100, 100, -100, 1000, -120, 120));
+            int materialCardCound = MaterialCardArrayList.Count;
+            double pxStart = Double.Parse(var_inputs[0]);
+            double pxEnd = Double.Parse(var_inputs[1]);
+            double pyStart = Double.Parse(var_inputs[2]);
+            double pyEnd = Double.Parse(var_inputs[3]);
+            double pzStart = Double.Parse(var_inputs[4]);
+            double pzEnd = Double.Parse(var_inputs[5]);
+
+            SurfaceCardArrayList.AddRange(MakeSurfaceCard.Make(materialCardCound, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd));
+            CellCardArrayList.AddRange(MakeCellCard.Make(MaterialCardArrayList, SurfaceCardArrayList));
         }
         
         
@@ -160,27 +184,31 @@ namespace SpaceAndBean
                 }
                 if (cell_cards_buffer == 1)
                 {
+                    CellCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     cell_cards_basic.Add(words);
                 }
                 if (surface_cards_buffer == 1)
                 {
-                    
+                    SurfaceCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     surface_cards_basic.Add(words);
                 }
                 if (data_cards_buffer == 1)
                 {
+                    DataCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     data_cards_basic.Add(words);
                 }
                 if (source_cards_buffer == 1)
                 {
+                    SourceCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     source_cards_basic.Add(words);
                 }
                 if (material_cards_buffer == 1)
                 {
+                    MaterialCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     List<string> list = new List<string>(words.ToList());
                     if (words[0].Contains("m"))
@@ -213,6 +241,7 @@ namespace SpaceAndBean
                 }
                 if (tally_cards_buffer == 1)
                 {
+                    TallyCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
                     tally_cards_basic.Add(words);
                 }
