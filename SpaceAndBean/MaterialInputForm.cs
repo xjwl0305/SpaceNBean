@@ -17,11 +17,14 @@ namespace SpaceAndBean
         private void MaterialInputForm_Load()
         {
             //TODO 이거 나중에 빼야함. 지금은 테스트용
+            
+            /*
             for (int i = 0; i < Program.material_cards_basic.Count; i++)
             {
                 String[] data = (String[]) Program.material_cards_basic[i];
                 MATERIAL_VIEW.Rows.Add(data);
             }
+            */
         }
 
         private void NextButton_Click(object sender, EventArgs e)
