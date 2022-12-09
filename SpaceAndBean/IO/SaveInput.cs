@@ -8,14 +8,14 @@ namespace SpaceAndBean.IO
     {
         public static bool Save(String fileName, DataGridViewRowCollection cellCardRow,  DataGridViewRowCollection surfaceCardRow,  DataGridViewRowCollection materialCardRow,  DataGridViewRowCollection tallyCardRow)
         {
-            string savePath = @"C:\input_File\"+@fileName;
+            string savePath = @Program.outputFilePath + @"\" + @fileName;
             FileStream fs = new FileStream(savePath, FileMode.OpenOrCreate);
             StreamWriter sw = new StreamWriter(fs);
             
             
             //파일이름
             sw.WriteLine(fileName.Split('.')[0]);
-            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @"C:\input_File\"+@fileName, @"D:\spacenbean\MY_MCNP\MY_MCNP_DATA\X09_AI\a_ne_1017.txt");
+            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @Program.inputFilePath, @savePath);
             
             //input, output 경로 정의
 

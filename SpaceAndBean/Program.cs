@@ -35,6 +35,8 @@ namespace SpaceAndBean
         public static ArrayList TallyCardArrayList = new ArrayList();
         
         public static String[] var_inputs = new String[6];
+        public static String inputFilePath = null;
+        public static String outputFilePath = null;
         
         /// <summary>
         /// The main entry point for the application.
@@ -57,8 +59,8 @@ namespace SpaceAndBean
             {
                 di3.Create();
             }
-            String basic_path = @"C:\basic_File\a_ne_2.txt";
-            ReadBasic(basic_path);
+            //String basic_path = @"C:\basic_File\a_ne_2.txt";
+            //ReadBasic(basic_path);
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

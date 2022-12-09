@@ -16,7 +16,7 @@ namespace SpaceAndBean
 
         private void MaterialInputForm_Load()
         {
-            //TODO 이거 나중에 빼야함. 지금은 테스트용
+            
             
             /*
             for (int i = 0; i < Program.material_cards_basic.Count; i++)
@@ -31,6 +31,10 @@ namespace SpaceAndBean
         {
             Program.material_cards_basic.Clear();
             
+            Program.inputFilePath = @inputPath.Text.ToString();
+            Program.outputFilePath = outputPath.Text.ToString();
+            Program.ReadBasic(@Program.inputFilePath);
+
             // 테이블 요소들을 다음 Form에 전달해야 함.
             for (int i = 0; i < MATERIAL_VIEW.Rows.Count; i++)
             {
@@ -82,6 +86,34 @@ namespace SpaceAndBean
             int index = MATERIAL_VIEW.CurrentRow.Index;
             MATERIAL_VIEW.Rows.Remove(MATERIAL_VIEW.Rows[index]);
             //throw new System.NotImplementedException();
+        }
+
+        private void inputButton_Click(object sender, EventArgs e)
+        {
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    inputPath.Text = openFileDialog.FileName;
+                }
+                
+            }
+        }
+
+        private void outputButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                outputPath.Text = fbd.SelectedPath;
+            }
         }
     }
 }
