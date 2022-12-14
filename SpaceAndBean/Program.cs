@@ -87,7 +87,7 @@ namespace SpaceAndBean
         public static void ReadBasic(String basic_path)
         {
             // basic file 한줄 씩 읽기
-            StreamReader sr = new StreamReader(@"C:\basic_File\a_ne_2.txt");
+            StreamReader sr = new StreamReader(@basic_path);
             String input_file_name = "input_"+DateTime.Now.ToString("yyyy-MM-dd_hh:mm:ss");
             String output_file_name = "output_"+DateTime.Now.ToString("yyyy-MM-dd_hh:mm:ss");
             // 제목 입력
