@@ -244,7 +244,7 @@ namespace SpaceAndBean
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 21);
             this.label8.TabIndex = 25;
-            this.label8.Text = "Input File";
+            this.label8.Text = "Basic File";
             // 
             // outputPath
             // 
@@ -260,7 +260,7 @@ namespace SpaceAndBean
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 21);
             this.label9.TabIndex = 27;
-            this.label9.Text = "Output File";
+            this.label9.Text = "Output Path";
             // 
             // inputFileSelector
             // 

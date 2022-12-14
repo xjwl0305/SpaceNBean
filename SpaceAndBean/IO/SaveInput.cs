@@ -15,7 +15,7 @@ namespace SpaceAndBean.IO
             
             //파일이름
             sw.WriteLine(fileName.Split('.')[0]);
-            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @Program.inputFilePath, @savePath);
+            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @savePath, @Program.outputFilePath + @"\output.txt" );
             
             //input, output 경로 정의
 
