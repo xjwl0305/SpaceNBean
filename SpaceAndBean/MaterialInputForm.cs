@@ -30,9 +30,9 @@ namespace SpaceAndBean
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.material_cards_basic.Clear();
-            
+            Program.MaterialCardArrayList.Clear();
             Program.inputFilePath = @inputPath.Text.ToString();
-            Program.outputFilePath = outputPath.Text.ToString();
+            Program.outputFileDir = @outputPath.Text.ToString();
             Program.ReadBasic(@Program.inputFilePath);
 
             // 테이블 요소들을 다음 Form에 전달해야 함.

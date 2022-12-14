@@ -89,7 +89,13 @@ namespace SpaceAndBean
 
         private void Save_Click(object sender, EventArgs e)
         {
-            SaveInput.Save("result.txt", CELL_CARD_VIEW.Rows, SURFACE_VIEW.Rows, MATERIAL_VIEW.Rows, TALLY_VIEW.Rows);
+
+            Program.CellCardArrayList = SaveInput.CollectionToArrayList(CELL_CARD_VIEW.Rows);
+            Program.SurfaceCardArrayList = SaveInput.CollectionToArrayList(SURFACE_VIEW.Rows);
+            Program.MaterialCardArrayList = SaveInput.CollectionToArrayList(MATERIAL_VIEW.Rows);
+            Program.TallyCardArrayList = SaveInput.CollectionToArrayList(TALLY_VIEW.Rows);
+            
+            SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList, Program.TallyCardArrayList);
             //throw new System.NotImplementedException();
         }
 

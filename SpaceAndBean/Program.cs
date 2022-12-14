@@ -37,6 +37,7 @@ namespace SpaceAndBean
         public static String[] var_inputs = new String[6];
         public static String inputFilePath = null;
         public static String outputFilePath = null;
+        public static String outputFileDir = null;
         
         /// <summary>
         /// The main entry point for the application.
