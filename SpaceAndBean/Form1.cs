@@ -90,6 +90,7 @@ namespace SpaceAndBean
         private void Save_Click(object sender, EventArgs e)
         {
             SaveInput.Save("result.txt", CELL_CARD_VIEW.Rows, SURFACE_VIEW.Rows, MATERIAL_VIEW.Rows, TALLY_VIEW.Rows);
+            
             //throw new System.NotImplementedException();
         }
 

@@ -59,6 +59,7 @@
     <Compile Include="MaterialInputForm.Designer.cs">
       <DependentUpon>MaterialInputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MCNP6\AutoExec.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomCreate\MakeCellCard.cs" />
