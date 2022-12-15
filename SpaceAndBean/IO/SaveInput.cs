@@ -207,7 +207,7 @@ namespace SpaceAndBean.IO
             }
 
 
-            return Program.outputFilePath;
+            return savePath;
         }
     }
 }

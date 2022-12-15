@@ -66,10 +66,11 @@ namespace SpaceAndBean
             // 
             this.MATERIAL_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MATERIAL_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.M_MAT_NUM, this.MAT_ATOM_INDEX, this.MAT_ATOM_QTY, this.M_MAT_DEN, this.M_ANNO });
-            this.MATERIAL_VIEW.Location = new System.Drawing.Point(45, 248);
+            this.MATERIAL_VIEW.Location = new System.Drawing.Point(51, 310);
+            this.MATERIAL_VIEW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MATERIAL_VIEW.Name = "MATERIAL_VIEW";
             this.MATERIAL_VIEW.RowTemplate.Height = 23;
-            this.MATERIAL_VIEW.Size = new System.Drawing.Size(696, 322);
+            this.MATERIAL_VIEW.Size = new System.Drawing.Size(795, 402);
             this.MATERIAL_VIEW.TabIndex = 0;
             // 
             // M_MAT_NUM
@@ -104,17 +105,18 @@ namespace SpaceAndBean
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(45, 217);
+            this.label1.Location = new System.Drawing.Point(51, 271);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 28);
+            this.label1.Size = new System.Drawing.Size(117, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Material_Card";
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(633, 591);
+            this.NextButton.Location = new System.Drawing.Point(723, 739);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(83, 26);
+            this.NextButton.Size = new System.Drawing.Size(95, 32);
             this.NextButton.TabIndex = 2;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -122,9 +124,10 @@ namespace SpaceAndBean
             // 
             // MATERIAL_ADD
             // 
-            this.MATERIAL_ADD.Location = new System.Drawing.Point(440, 592);
+            this.MATERIAL_ADD.Location = new System.Drawing.Point(503, 740);
+            this.MATERIAL_ADD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MATERIAL_ADD.Name = "MATERIAL_ADD";
-            this.MATERIAL_ADD.Size = new System.Drawing.Size(79, 25);
+            this.MATERIAL_ADD.Size = new System.Drawing.Size(90, 31);
             this.MATERIAL_ADD.TabIndex = 3;
             this.MATERIAL_ADD.Text = "ADD";
             this.MATERIAL_ADD.UseVisualStyleBackColor = true;
@@ -132,9 +135,10 @@ namespace SpaceAndBean
             // 
             // MATERIAL_DEL
             // 
-            this.MATERIAL_DEL.Location = new System.Drawing.Point(536, 592);
+            this.MATERIAL_DEL.Location = new System.Drawing.Point(613, 740);
+            this.MATERIAL_DEL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MATERIAL_DEL.Name = "MATERIAL_DEL";
-            this.MATERIAL_DEL.Size = new System.Drawing.Size(79, 25);
+            this.MATERIAL_DEL.Size = new System.Drawing.Size(90, 31);
             this.MATERIAL_DEL.TabIndex = 4;
             this.MATERIAL_DEL.Text = "DEL";
             this.MATERIAL_DEL.UseVisualStyleBackColor = true;
@@ -142,132 +146,139 @@ namespace SpaceAndBean
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(543, 178);
+            this.label6.Location = new System.Drawing.Point(621, 222);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 21);
+            this.label6.Size = new System.Drawing.Size(79, 26);
             this.label6.TabIndex = 23;
             this.label6.Text = "PZ_END";
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(294, 178);
+            this.label5.Location = new System.Drawing.Point(336, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 21);
+            this.label5.Size = new System.Drawing.Size(79, 26);
             this.label5.TabIndex = 22;
             this.label5.Text = "PY_END";
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(36, 178);
+            this.label4.Location = new System.Drawing.Point(41, 222);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.Size = new System.Drawing.Size(79, 26);
             this.label4.TabIndex = 21;
             this.label4.Text = "PX_END";
             // 
             // PZ_END
             // 
-            this.PZ_END.Location = new System.Drawing.Point(633, 174);
+            this.PZ_END.Location = new System.Drawing.Point(723, 218);
+            this.PZ_END.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PZ_END.Name = "PZ_END";
-            this.PZ_END.Size = new System.Drawing.Size(123, 21);
+            this.PZ_END.Size = new System.Drawing.Size(140, 25);
             this.PZ_END.TabIndex = 20;
             // 
             // PY_END
             // 
-            this.PY_END.Location = new System.Drawing.Point(383, 174);
+            this.PY_END.Location = new System.Drawing.Point(438, 218);
+            this.PY_END.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PY_END.Name = "PY_END";
-            this.PY_END.Size = new System.Drawing.Size(118, 21);
+            this.PY_END.Size = new System.Drawing.Size(134, 25);
             this.PY_END.TabIndex = 19;
             // 
             // PX_END
             // 
-            this.PX_END.Location = new System.Drawing.Point(126, 174);
+            this.PX_END.Location = new System.Drawing.Point(144, 218);
+            this.PX_END.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PX_END.Name = "PX_END";
-            this.PX_END.Size = new System.Drawing.Size(115, 21);
+            this.PX_END.Size = new System.Drawing.Size(131, 25);
             this.PX_END.TabIndex = 18;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(543, 137);
+            this.label3.Location = new System.Drawing.Point(621, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 21);
+            this.label3.Size = new System.Drawing.Size(79, 26);
             this.label3.TabIndex = 17;
             this.label3.Text = "PZ_START";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(294, 137);
+            this.label2.Location = new System.Drawing.Point(336, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 21);
+            this.label2.Size = new System.Drawing.Size(79, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "PY_START";
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(36, 137);
+            this.label7.Location = new System.Drawing.Point(41, 171);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 21);
+            this.label7.Size = new System.Drawing.Size(79, 26);
             this.label7.TabIndex = 15;
             this.label7.Text = "PX_START";
             // 
             // PZ_START
             // 
-            this.PZ_START.Location = new System.Drawing.Point(633, 134);
+            this.PZ_START.Location = new System.Drawing.Point(723, 168);
+            this.PZ_START.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PZ_START.Name = "PZ_START";
-            this.PZ_START.Size = new System.Drawing.Size(123, 21);
+            this.PZ_START.Size = new System.Drawing.Size(140, 25);
             this.PZ_START.TabIndex = 14;
             // 
             // PY_START
             // 
-            this.PY_START.Location = new System.Drawing.Point(382, 134);
+            this.PY_START.Location = new System.Drawing.Point(437, 168);
+            this.PY_START.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PY_START.Name = "PY_START";
-            this.PY_START.Size = new System.Drawing.Size(120, 21);
+            this.PY_START.Size = new System.Drawing.Size(137, 25);
             this.PY_START.TabIndex = 13;
             // 
             // PX_START
             // 
-            this.PX_START.Location = new System.Drawing.Point(126, 134);
+            this.PX_START.Location = new System.Drawing.Point(144, 168);
+            this.PX_START.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PX_START.Name = "PX_START";
-            this.PX_START.Size = new System.Drawing.Size(115, 21);
+            this.PX_START.Size = new System.Drawing.Size(131, 25);
             this.PX_START.TabIndex = 12;
             // 
             // inputPath
             // 
-            this.inputPath.Location = new System.Drawing.Point(126, 23);
+            this.inputPath.Location = new System.Drawing.Point(144, 29);
             this.inputPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputPath.Name = "inputPath";
-            this.inputPath.Size = new System.Drawing.Size(564, 21);
+            this.inputPath.Size = new System.Drawing.Size(644, 25);
             this.inputPath.TabIndex = 24;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(36, 30);
+            this.label8.Location = new System.Drawing.Point(41, 38);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 21);
+            this.label8.Size = new System.Drawing.Size(79, 26);
             this.label8.TabIndex = 25;
             this.label8.Text = "Basic File";
             // 
             // outputPath
             // 
-            this.outputPath.Location = new System.Drawing.Point(126, 65);
+            this.outputPath.Location = new System.Drawing.Point(144, 81);
             this.outputPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.outputPath.Name = "outputPath";
-            this.outputPath.Size = new System.Drawing.Size(564, 21);
+            this.outputPath.Size = new System.Drawing.Size(644, 25);
             this.outputPath.TabIndex = 26;
+            this.outputPath.Text = "C:\\output_File";
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(36, 69);
+            this.label9.Location = new System.Drawing.Point(41, 86);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 21);
+            this.label9.Size = new System.Drawing.Size(79, 26);
             this.label9.TabIndex = 27;
             this.label9.Text = "Output Path";
             // 
             // inputFileSelector
             // 
-            this.inputFileSelector.Location = new System.Drawing.Point(708, 23);
+            this.inputFileSelector.Location = new System.Drawing.Point(809, 29);
             this.inputFileSelector.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputFileSelector.Name = "inputFileSelector";
-            this.inputFileSelector.Size = new System.Drawing.Size(33, 21);
+            this.inputFileSelector.Size = new System.Drawing.Size(38, 26);
             this.inputFileSelector.TabIndex = 28;
             this.inputFileSelector.Text = "...";
             this.inputFileSelector.UseVisualStyleBackColor = true;
@@ -275,10 +286,10 @@ namespace SpaceAndBean
             // 
             // outputFileSelector
             // 
-            this.outputFileSelector.Location = new System.Drawing.Point(708, 65);
+            this.outputFileSelector.Location = new System.Drawing.Point(809, 81);
             this.outputFileSelector.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.outputFileSelector.Name = "outputFileSelector";
-            this.outputFileSelector.Size = new System.Drawing.Size(33, 21);
+            this.outputFileSelector.Size = new System.Drawing.Size(38, 26);
             this.outputFileSelector.TabIndex = 29;
             this.outputFileSelector.Text = "...";
             this.outputFileSelector.UseVisualStyleBackColor = true;
@@ -286,12 +297,12 @@ namespace SpaceAndBean
             // 
             // MaterialInputForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(834, 569);
+            this.ClientSize = new System.Drawing.Size(953, 711);
             this.Controls.Add(this.outputFileSelector);
             this.Controls.Add(this.inputFileSelector);
             this.Controls.Add(this.label9);
@@ -316,6 +327,7 @@ namespace SpaceAndBean
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MATERIAL_VIEW);
             this.Location = new System.Drawing.Point(15, 15);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MaterialInputForm";
             this.Text = "NoriSpace";
             ((System.ComponentModel.ISupportInitialize)(this.MATERIAL_VIEW)).EndInit();
