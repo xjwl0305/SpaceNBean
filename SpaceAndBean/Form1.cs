@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
 using SpaceAndBean.IO;
+using SpaceAndBean.MCNP6;
 using SpaceAndBean.RandomCreate;
 
 namespace SpaceAndBean
@@ -96,6 +97,7 @@ namespace SpaceAndBean
             Program.TallyCardArrayList = SaveInput.CollectionToArrayList(TALLY_VIEW.Rows);
             
             SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList, Program.TallyCardArrayList);
+            AutoExec.Exec_MCNP();
             //throw new System.NotImplementedException();
         }
 
