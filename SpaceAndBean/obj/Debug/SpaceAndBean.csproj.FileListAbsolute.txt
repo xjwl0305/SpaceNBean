@@ -21,3 +21,4 @@ C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.cspr
 C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.exe
 C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.pdb
 C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.MaterialInputForm.resources
+C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.MaterialInputForm.resources
