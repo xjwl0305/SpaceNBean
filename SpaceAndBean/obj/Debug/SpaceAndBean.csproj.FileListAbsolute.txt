@@ -22,3 +22,17 @@ C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.exe
 C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.pdb
 C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.MaterialInputForm.resources
 C:\Users\tuji\RiderProjects\SpaceAndBean\SpaceAndBean\obj\Debug\SpaceAndBean.MaterialInputForm.resources
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.exe
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.pdb
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\SpaceAndBean.exe.config
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\SpaceAndBean.exe
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\SpaceAndBean.pdb
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.AssemblyReference.cache
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.SuggestedBindingRedirects.cache
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.Form1.resources
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.MaterialInputForm.resources
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.Properties.Resources.resources
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.GenerateResource.cache
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CoreCompileInputs.cache
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CopyComplete

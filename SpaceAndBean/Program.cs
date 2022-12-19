@@ -49,6 +49,8 @@ namespace SpaceAndBean
             DirectoryInfo di = new DirectoryInfo(@"C:\input_File");
             DirectoryInfo di2 = new DirectoryInfo(@"C:\output_File");
             DirectoryInfo di3 = new DirectoryInfo(@"C:\basic_File");
+            DirectoryInfo di4 = new DirectoryInfo(@"C:\result_File");
+            DirectoryInfo di5 = new DirectoryInfo(@"C:\excel_File");
             if (di.Exists == false)
             {
                 di.Create();
@@ -57,18 +59,26 @@ namespace SpaceAndBean
             {
                 di2.Create();
             }
-            if (di2.Exists == false)
+            if (di3.Exists == false)
             {
                 di3.Create();
             }
+            if (di4.Exists == false)
+            {
+                di4.Create();
+            }
+            if (di5.Exists == false)
+            {
+                di5.Create();
+            }
             //String basic_path = @"C:\basic_File\a_ne_2.txt";
             //ReadBasic(basic_path);
-            
+            //AutoExec.Change_To_CSV(); 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MaterialInputForm());
             
-            
+
         }
 
         public static void CreateBasic()

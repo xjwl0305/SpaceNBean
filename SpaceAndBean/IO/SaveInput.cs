@@ -36,7 +36,7 @@ namespace SpaceAndBean.IO
             //String filename = String.Format("{0}_{1}_{2}_{3}_{4}_{5}.txt", 
             //    today.Year.ToString(), today.Month.ToString(), today.Day.ToString(), today.Hour.ToString(), today.Minute.ToString(), today.Second.ToString());
             
-            String savePath = @Program.outputFileDir + @"\" + @filename + @".txt";
+            String savePath = @Program.outputFileDir + @"\" + @filename + @"_result.txt";
             Program.outputFilePath = @Program.outputFileDir +@"\" + @filename + @"_result.txt";
             
             FileStream fs = new FileStream(savePath, FileMode.OpenOrCreate);
