@@ -52,6 +52,7 @@ namespace SpaceAndBean.RandomCreate
                 //int indexMaterial = (int)materialCardArray[randomIndex1];
                 
                 String material = ((String[])materialCardArray[randomIndex1])[0].Replace("m", "");
+                String density = ((String[])materialCardArray[randomIndex1])[3];
                 String px1 = ((String[])surfaceCardArray[indexSurface])[0];
                 String px2 = "-" + ((String[])surfaceCardArray[indexSurface])[2];
                 String py1 = ((String[])surfaceCardArray[indexSurface])[4];
@@ -63,7 +64,7 @@ namespace SpaceAndBean.RandomCreate
                 
                 String[] data =
                 {
-                    (i+100).ToString(), material, "", 
+                    (i+100).ToString(), material, density, 
                     px1 + " " + px2 + " " + py1 + " " + py2 + " " + pz1 + " " + pz2, "imp:p=1", "imp:n=1"
                 };
                 cellCardArray.Add(data);
