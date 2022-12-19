@@ -30,7 +30,7 @@ namespace SpaceAndBean.MCNP6
             MCNP.RedirectStandardInput = true;
             MCNP.RedirectStandardOutput = true;
             MCNP.RedirectStandardError = true;
-            MCNP.CreateNoWindow = true;
+            //MCNP.CreateNoWindow = true;
             MCNP.Verb = "runas";
             MCNP.UseShellExecute = false;
             //MCNP.UserName = "RWIZ";
@@ -58,7 +58,7 @@ namespace SpaceAndBean.MCNP6
             {
                 foreach (var proc in processes)
                 {
-                    proc.Kill();
+                    proc.CloseMainWindow();
                 }
                 processes = Process.GetProcessesByName("mcnp6");
             }
