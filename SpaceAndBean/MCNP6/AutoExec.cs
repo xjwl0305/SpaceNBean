@@ -22,16 +22,6 @@ namespace SpaceAndBean.MCNP6
         public static StreamWriter myStreamWriter;
         public static void Exec_MCNP()
         {
-            FileSystemWatcher watcher = new FileSystemWatcher("C:\\output_File", "*.txt");
-            watcher.EnableRaisingEvents = true;
-            watcher.IncludeSubdirectories = true; 
-            watcher.InternalBufferSize = 60768;
-            if (Exec_count > 100)
-            {
-                watcher.Created -= FileSystemWatcher_Created;
-                p.Close();
-                return;
-            }
             //watcher.Created += FileSystemWatcher_Created;
             ProcessStartInfo MCNP = new ProcessStartInfo();
             MCNP.FileName = "C:\\Windows\\System32\\cmd.exe";
@@ -52,14 +42,15 @@ namespace SpaceAndBean.MCNP6
                 {
                     myStreamWriter.WriteLine("mcnp6 i=" + Program.outputFilePath + " o=C:\\result_File\\" +
                                              Path.GetFileName(Program.outputFilePath));
-                    Delay(4000);
-                    Change_To_CSV();
-                    Program.CellCardArrayList = MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
-                    SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
-                        Program.TallyCardArrayList);
-                    
                 }
+                Delay(4000);
                 p.Close();
+                myStreamWriter.Close();
+                Change_To_CSV();
+                Program.CellCardArrayList = MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
+                SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
+                    Program.TallyCardArrayList);
+                
             }
             Exec_count += 1;
         }
@@ -79,7 +70,7 @@ namespace SpaceAndBean.MCNP6
         
         public static void Change_To_CSV()
         {
-            string[] path = Directory.GetFiles("C:\\result_File\\", "*.txt", SearchOption.TopDirectoryOnly);
+            //string[] path = Directory.GetFiles("C:\\result_File\\", "*.txt", SearchOption.TopDirectoryOnly);
             string pattern =
                 @"\s+\d{1,3}\s+\d{1,3}\s+\d{1,3}\s+[a-zA-Z0-9-+.]{8,15}\s+[a-zA-Z0-9-+.]{8,15}\s+[a-zA-Z0-9-+.]{8,15}\s+[a-zA-Z0-9-+.]{8,15}\s+";
             var excelApp = new Excel.Application();
@@ -100,23 +91,27 @@ namespace SpaceAndBean.MCNP6
             
 
             ArrayList data = new ArrayList();
-            string[] lines = System.IO.File.ReadAllLines("C:\\result_File\\"+Path.GetFileName(Program.outputFilePath));
-            int count = 0;
-            for (int j = 0; j < lines.Length; j++)
+            //string[] lines = System.IO.File.ReadAllLines("C:\\result_File\\"+Path.GetFileName(Program.outputFilePath));
+            using (StreamReader sr = new StreamReader("C:\\result_File\\" + Path.GetFileName(Program.outputFilePath)))
             {
-                int count2 = 1;
-                if (Regex.IsMatch(lines[j], pattern))
+                int count = 0;
+                while (!sr.EndOfStream)
                 {
-                    string d = lines[j];
-                    //data.Add(lines[j].Split(' ').Where(line => !string.IsNullOrEmpty(line)).Select(line => line.Trim()));
-                    IEnumerable<string> query = lines[j].Split(' ').Where(line => !string.IsNullOrEmpty(line))
-                        .Select(line => line.Trim());
-                    foreach (string value in query)
+                    string lines = sr.ReadLine();
+                    int count2 = 1;
+                    if (Regex.IsMatch(lines, pattern))
                     {
-                        workSheet.Cells[2 + count, count2] = value;
-                        count2 += 1;
+                        string d = lines;
+                        //data.Add(lines[j].Split(' ').Where(line => !string.IsNullOrEmpty(line)).Select(line => line.Trim()));
+                        IEnumerable<string> query = lines.Split(' ').Where(line => !string.IsNullOrEmpty(line))
+                            .Select(line => line.Trim());
+                        foreach (string value in query)
+                        {
+                            workSheet.Cells[2 + count, count2] = value;
+                            count2 += 1;
+                        }
+                        count += 1;
                     }
-                    count += 1;
                 }
             }
             workSheet.Columns.AutoFit();                                    // 열 너비 자동 맞춤
