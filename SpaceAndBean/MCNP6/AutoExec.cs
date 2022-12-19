@@ -20,6 +20,7 @@ namespace SpaceAndBean.MCNP6
         public static int Exec_count = 0;
         public static Process p = new Process();
         public static StreamWriter myStreamWriter;
+        public static ArrayList path_list = new ArrayList();
         public static void Exec_MCNP()
         {
             //watcher.Created += FileSystemWatcher_Created;
@@ -32,44 +33,45 @@ namespace SpaceAndBean.MCNP6
             MCNP.CreateNoWindow = true;
             MCNP.Verb = "runas";
             MCNP.UseShellExecute = false;
+            //MCNP.UserName = "RWIZ";
             
-            //string re = p.StandardOutput.ReadToEnd();
+            
             for (int i = 0; i < 10; i++)
             {
                 p = Process.Start(MCNP);
-                myStreamWriter = p.StandardInput;
-                using (myStreamWriter)
+                using (StreamWriter myStreamWriter = p.StandardInput)
                 {
                     myStreamWriter.WriteLine("mcnp6 i=" + Program.outputFilePath + " o=C:\\result_File\\" +
                                              Path.GetFileName(Program.outputFilePath));
                 }
-                Delay(4000);
+                path_list.Add(Program.outputFilePath);
+                Delay(3000);
                 p.Close();
-                myStreamWriter.Close();
-                Change_To_CSV();
+                //p.WaitForExit(-1);
                 Program.CellCardArrayList = MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
                 SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
                     Program.TallyCardArrayList);
-                
             }
             Exec_count += 1;
-        }
-
-        public static void FileSystemWatcher_Created(object sender, FileSystemEventArgs e)
-        {
-            //Debug.WriteLine("Created result file : {0}, count : {1}", e.Name, Exec_count);
-            Program.CellCardArrayList = MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
-            SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
-                Program.TallyCardArrayList);
-            myStreamWriter.WriteLine("mcnp6 i=" + Program.outputFilePath + " o=C:\\result_File\\" +
-                                     Path.GetFileName(Program.outputFilePath));
-            //string re = p.StandardOutput.ReadToEnd();
-            Exec_count += 1;
-            //Exec_MCNP();
+            Process[] processes = Process.GetProcessesByName("mcnp6");
+            while (processes.Length > 0)
+            {
+                foreach (var proc in processes)
+                {
+                    proc.Kill();
+                }
+                processes = Process.GetProcessesByName("mcnp6");
+            }
+            
+            foreach (string path in path_list)
+            {
+                Change_To_CSV(path);
+            }
         }
         
-        public static void Change_To_CSV()
+        public static void Change_To_CSV(string path)
         {
+
             //string[] path = Directory.GetFiles("C:\\result_File\\", "*.txt", SearchOption.TopDirectoryOnly);
             string pattern =
                 @"\s+\d{1,3}\s+\d{1,3}\s+\d{1,3}\s+[a-zA-Z0-9-+.]{8,15}\s+[a-zA-Z0-9-+.]{8,15}\s+[a-zA-Z0-9-+.]{8,15}\s+[a-zA-Z0-9-+.]{8,15}\s+";
@@ -92,7 +94,8 @@ namespace SpaceAndBean.MCNP6
 
             ArrayList data = new ArrayList();
             //string[] lines = System.IO.File.ReadAllLines("C:\\result_File\\"+Path.GetFileName(Program.outputFilePath));
-            using (StreamReader sr = new StreamReader("C:\\result_File\\" + Path.GetFileName(Program.outputFilePath)))
+
+            using (StreamReader sr = new StreamReader("C:\\result_File\\" + Path.GetFileName(path)))
             {
                 int count = 0;
                 while (!sr.EndOfStream)
@@ -115,7 +118,7 @@ namespace SpaceAndBean.MCNP6
                 }
             }
             workSheet.Columns.AutoFit();                                    // 열 너비 자동 맞춤
-            string excel_path = Path.Combine(@"C:\excel_File\", Path.GetFileNameWithoutExtension(Program.outputFilePath)+".xlsx");
+            string excel_path = Path.Combine(@"C:\excel_File\", Path.GetFileNameWithoutExtension(path)+".xlsx");
             workBook.SaveAs(excel_path, Excel.XlFileFormat.xlWorkbookDefault);    // 엑셀 파일 저장
 
             workBook.Close(true);
