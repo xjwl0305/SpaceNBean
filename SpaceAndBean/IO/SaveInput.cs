@@ -38,6 +38,7 @@ namespace SpaceAndBean.IO
             
             String savePath = @Program.outputFileDir + @"\" + @filename + @"_result.txt";
             Program.outputFilePath = @Program.outputFileDir +@"\" + @filename + @"_result.txt";
+            String resultPath = @"C:\result_File\" + @filename + @"_result.txt";
             
             FileStream fs = new FileStream(savePath, FileMode.OpenOrCreate);
             StreamWriter sw = new StreamWriter(fs);
@@ -47,7 +48,7 @@ namespace SpaceAndBean.IO
 
             //파일이름
             sw.WriteLine(filename.Split('.')[0]);
-            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @savePath, @Program.outputFilePath);
+            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @savePath, resultPath);
             
             //input, output 경로 정의
 

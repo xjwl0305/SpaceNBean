@@ -36,3 +36,6 @@ C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.cspro
 C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CoreCompileInputs.cache
 C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\Microsoft.Office.Interop.Excel.dll
 C:\Users\RWIZ\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CopyComplete
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\bin\Debug\stdole.dll
+C:\Users\NoriS\RiderProjects\SpaceNBean\SpaceAndBean\obj\Debug\SpaceAndBean.csproj.CopyComplete
