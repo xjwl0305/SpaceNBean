@@ -45,6 +45,7 @@ namespace SpaceAndBean.IO
                         decimal Tally14Mean = Decimal.Parse(Tally14Text.Split(' ')[0]);
                         
                         result = Math.Sqrt((Math.Pow(Decimal.ToDouble(x1 - Tally4Mean), 2) + Math.Pow(Decimal.ToDouble(y1 - Tally14Mean), 2)));
+                        break;
                     }
                 }
             }
