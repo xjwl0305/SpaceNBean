@@ -65,6 +65,9 @@ namespace SpaceAndBean
             Program.var_inputs[3] = PY_END.Text;
             Program.var_inputs[4] = PZ_START.Text;
             Program.var_inputs[5] = PZ_END.Text;
+            Program.tally4 = tally4Text.Text;
+            Program.tally14 = tally14Text.Text;
+            
             Form1 form1 = new Form1();
             form1.ShowDialog();
 

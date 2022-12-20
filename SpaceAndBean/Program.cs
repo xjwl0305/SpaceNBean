@@ -39,6 +39,9 @@ namespace SpaceAndBean
         public static String inputFilePath = null;
         public static String outputFilePath = null;
         public static String outputFileDir = null;
+
+        public static String tally4 = null;
+        public static String tally14 = null;
         
         /// <summary>
         /// The main entry point for the application.

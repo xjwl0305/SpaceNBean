@@ -62,11 +62,31 @@ namespace SpaceAndBean.MCNP6
                 }
                 processes = Process.GetProcessesByName("mcnp6");
             }
+
+            // 유클리드 거리 계산
+            double minDistance =
+                GetDistance.Get((String)path_list[0], Decimal.Parse(Program.tally4), Decimal.Parse(Program.tally14), "1000000");
+            int minIndex = 0;
+            for (int i = 1; i < path_list.Count; i++)
+            {
+                double distance =
+                    GetDistance.Get((String)path_list[i], Decimal.Parse(Program.tally4), Decimal.Parse(Program.tally14), "1000000");
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    minIndex = i;
+                }
+            }
             
+            //최적해만 csv 출력합니다.
+            Change_To_CSV((String)path_list[minIndex]);
+            
+            /*
             foreach (string path in path_list)
             {
                 Change_To_CSV(path);
             }
+            */
         }
         
         public static void Change_To_CSV(string path)

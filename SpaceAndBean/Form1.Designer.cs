@@ -306,7 +306,7 @@ namespace SpaceAndBean
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(718, 1784);
+            this.Save.Location = new System.Drawing.Point(679, 1785);
             this.Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(131, 48);
