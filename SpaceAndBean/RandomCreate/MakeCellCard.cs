@@ -55,7 +55,7 @@ namespace SpaceAndBean.RandomCreate
                 }
                 else
                     randomIndex1 = random1.Next(0, checkMaterialArrayList.Count - 1);
-                int indexMaterial = (int)materialCardArray[randomIndex1];
+                int indexMaterial = (int)checkMaterialArrayList[randomIndex1];
                 checkMaterialArrayList.RemoveAt(randomIndex1);
                 
                 String material = ((String[])materialCardArray[indexMaterial])[0].Replace("m", "");
