@@ -41,8 +41,8 @@ namespace SpaceAndBean.IO
                         String Tally4Text = TallyTexts[1];
                         String Tally14Text = TallyTexts[2];
 
-                        decimal Tally4Mean = Decimal.Parse(Tally4Text.Split(' ')[0]);
-                        decimal Tally14Mean = Decimal.Parse(Tally14Text.Split(' ')[0]);
+                        decimal Tally4Mean = Decimal.Parse(Tally4Text.Split(' ')[0], System.Globalization.NumberStyles.Float);
+                        decimal Tally14Mean = Decimal.Parse(Tally14Text.Split(' ')[0], System.Globalization.NumberStyles.Float);
                         
                         result = Math.Sqrt((Math.Pow(Decimal.ToDouble(x1 - Tally4Mean), 2) + Math.Pow(Decimal.ToDouble(y1 - Tally14Mean), 2)));
                         break;
