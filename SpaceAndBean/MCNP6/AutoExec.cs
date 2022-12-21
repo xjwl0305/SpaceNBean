@@ -65,7 +65,7 @@ namespace SpaceAndBean.MCNP6
 
             // 유클리드 거리 계산
             double minDistance =
-                GetDistance.Get((String)path_list[0], Decimal.Parse(Program.tally4), Decimal.Parse(Program.tally14), "1000000");
+                GetDistance.Get((String)path_list[0], Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float), Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
             int minIndex = 0;
             for (int i = 1; i < path_list.Count; i++)
             {
