@@ -30,9 +30,9 @@ namespace SpaceAndBean.RandomCreate
             ArrayList checkSurfaceArrayList = new ArrayList();
             checkSurfaceArrayList.AddRange(checkSurface); 
             
-            //int[] checkMaterial = Enumerable.Range(0, materialCardCount - 1).ToArray();
-            //ArrayList checkMaterialArrayList = new ArrayList();
-            //checkMaterialArrayList.AddRange(checkMaterial);
+            int[] checkMaterial = Enumerable.Range(0, materialCardCount).ToArray();
+            ArrayList checkMaterialArrayList = new ArrayList();
+            checkMaterialArrayList.AddRange(checkMaterial);
             
             Random random = new Random();
             Random random1 = new Random();
@@ -46,13 +46,20 @@ namespace SpaceAndBean.RandomCreate
                     randomIndex = random.Next(0, checkSurfaceArrayList.Count - 1);
                 int indexSurface = (int)checkSurfaceArrayList[randomIndex];
                 checkSurfaceArrayList.RemoveAt(randomIndex);
+
+
+                int randomIndex1 = 0;
+                if (checkMaterialArrayList.Count <= 1)
+                {
+                    randomIndex1 = 0;
+                }
+                else
+                    randomIndex1 = random1.Next(0, checkMaterialArrayList.Count - 1);
+                int indexMaterial = (int)materialCardArray[randomIndex1];
+                checkMaterialArrayList.RemoveAt(randomIndex1);
                 
-                
-                int randomIndex1 = random1.Next(0, materialCardCount - 1);
-                //int indexMaterial = (int)materialCardArray[randomIndex1];
-                
-                String material = ((String[])materialCardArray[randomIndex1])[0].Replace("m", "");
-                String density = ((String[])materialCardArray[randomIndex1])[3];
+                String material = ((String[])materialCardArray[indexMaterial])[0].Replace("m", "");
+                String density = ((String[])materialCardArray[indexMaterial])[3];
                 String px1 = ((String[])surfaceCardArray[indexSurface])[0];
                 String px2 = "-" + ((String[])surfaceCardArray[indexSurface])[2];
                 String py1 = ((String[])surfaceCardArray[indexSurface])[4];
@@ -60,7 +67,6 @@ namespace SpaceAndBean.RandomCreate
                 String pz1 = ((String[])surfaceCardArray[indexSurface])[8];
                 String pz2 = "-" + ((String[])surfaceCardArray[indexSurface])[10];
                 
-                //int indexMaterial = checkMaterial[randomIndex1] 
                 
                 String[] data =
                 {

@@ -84,9 +84,27 @@ namespace SpaceAndBean
 
         }
 
+        public static int GetMaterialCount(ArrayList materialCardArrayList)
+        {
+            if (materialCardArrayList.Count == 0)
+                return 0;
+            
+            int count = 0;
+            for (int i = 0; i < materialCardArrayList.Count; i++)
+            {
+                String[] line = (String[])materialCardArrayList[i];
+                if (!line[0].Replace(" ", "").Equals(""))
+                {
+                    count++;
+                }
+            }
+            return count;
+
+        }
+
         public static void CreateBasic()
         {
-            int materialCardCound = MaterialCardArrayList.Count;
+            int materialCardCound = GetMaterialCount(MaterialCardArrayList);
             double pxStart = Double.Parse(var_inputs[0]);
             double pxEnd = Double.Parse(var_inputs[1]);
             double pyStart = Double.Parse(var_inputs[2]);
