@@ -63,6 +63,8 @@ namespace SpaceAndBean
             this.tally4Text = new System.Windows.Forms.TextBox();
             this.tally14Text = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.m1DensityText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MATERIAL_VIEW)).BeginInit();
             this.SuspendLayout();
             // 
@@ -335,6 +337,24 @@ namespace SpaceAndBean
             this.label11.Text = "TALLY_14";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label12
+            // 
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label12.Location = new System.Drawing.Point(611, 162);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 26);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "M1_Density";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m1DensityText
+            // 
+            this.m1DensityText.Location = new System.Drawing.Point(713, 162);
+            this.m1DensityText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.m1DensityText.Name = "m1DensityText";
+            this.m1DensityText.Size = new System.Drawing.Size(131, 25);
+            this.m1DensityText.TabIndex = 35;
+            // 
             // MaterialInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -343,6 +363,8 @@ namespace SpaceAndBean
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(995, 711);
+            this.Controls.Add(this.m1DensityText);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.tally14Text);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tally4Text);
@@ -378,6 +400,9 @@ namespace SpaceAndBean
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox m1DensityText;
 
         private System.Windows.Forms.TextBox tally14Text;
         private System.Windows.Forms.Label label11;

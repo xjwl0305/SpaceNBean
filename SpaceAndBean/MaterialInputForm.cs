@@ -64,6 +64,7 @@ namespace SpaceAndBean
             Program.var_inputs[5] = PZ_END.Text;
             Program.tally4 = tally4Text.Text;
             Program.tally14 = tally14Text.Text;
+            Program.m1Density = m1DensityText.Text;
             
             Form1 form1 = new Form1();
             form1.ShowDialog();
@@ -115,5 +116,6 @@ namespace SpaceAndBean
                 outputPath.Text = fbd.SelectedPath;
             }
         }
+        
     }
 }

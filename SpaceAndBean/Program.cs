@@ -42,6 +42,7 @@ namespace SpaceAndBean
 
         public static String tally4 = null;
         public static String tally14 = null;
+        public static String m1Density = null;
         
         /// <summary>
         /// The main entry point for the application.

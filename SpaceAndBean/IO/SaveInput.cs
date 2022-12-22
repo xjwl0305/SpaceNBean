@@ -82,7 +82,7 @@ namespace SpaceAndBean.IO
             
             //Cell Card Air
             
-            String airCellCard = String.Format("{0}     1   -51", (Int64.Parse((String)materialIndexArrayList[materialIndexArrayList.Count-1]) + 1).ToString());
+            String airCellCard = String.Format("{0}     1   {1}", (Int64.Parse((String)materialIndexArrayList[materialIndexArrayList.Count-1]) + 1).ToString(), Program.m1Density);
             String impOption = " imp:p=1 imp:n=1";
             for (int i = 0; i < materialIndexArrayList.Count; i++)
             {
@@ -107,6 +107,15 @@ namespace SpaceAndBean.IO
             }
             
             //Surface Card
+            double pxStart = Double.Parse(Program.var_inputs[0]);
+            double pxEnd = Double.Parse(Program.var_inputs[1]);
+            double pyStart = Double.Parse(Program.var_inputs[2]);
+            double pyEnd = Double.Parse(Program.var_inputs[3]);
+            sw.WriteLine("{0}     px {1}", "100", pxStart.ToString());
+            sw.WriteLine("{0}     px {1}", "101", pxEnd.ToString());
+            sw.WriteLine("{0}     py {1}", "102", pyStart.ToString());
+            sw.WriteLine("{0}     py {1}", "103", pyEnd.ToString());
+            
             for (int i = 0; i < surfaceCardRow.Count; i++)
             {
                 String[] row = (String[])surfaceCardRow[i];
@@ -117,15 +126,6 @@ namespace SpaceAndBean.IO
                     if (row[j] == null) data[j] = "";
                     else data[j] = row[j].Trim();
                 }
-                double pxStart = Double.Parse(Program.var_inputs[0]);
-                double pxEnd = Double.Parse(Program.var_inputs[1]);
-                double pyStart = Double.Parse(Program.var_inputs[2]);
-                double pyEnd = Double.Parse(Program.var_inputs[3]);
-
-                sw.WriteLine("{0}     px {1}", "100", pxStart.ToString());
-                sw.WriteLine("{0}     px {1}", "101", pxEnd.ToString());
-                sw.WriteLine("{0}     py {1}", "102", pyStart.ToString());
-                sw.WriteLine("{0}     py {1}", "103", pyEnd.ToString());
                 sw.WriteLine("{0}     pz {1}", data[8], data[9]);
                 sw.WriteLine("{0}     pz {1}", data[10], data[11]);
                 
