@@ -112,7 +112,7 @@ namespace SpaceAndBean
             double pzStart = Double.Parse(var_inputs[4]);
             double pzEnd = Double.Parse(var_inputs[5]);
 
-            SurfaceCardArrayList.AddRange(MakeSurfaceCard.Make(materialCardCound, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd));
+            SurfaceCardArrayList.AddRange(MakeSurfaceCard.Make(MaterialCardArrayList, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd));
             CellCardArrayList.AddRange(MakeCellCard.Make(MaterialCardArrayList, SurfaceCardArrayList));
         }
         

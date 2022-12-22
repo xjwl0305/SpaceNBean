@@ -36,12 +36,9 @@ namespace SpaceAndBean
             Program.ReadBasic(@Program.inputFilePath);
 
             // 테이블 요소들을 다음 Form에 전달해야 함.
-            for (int i = 0; i < MATERIAL_VIEW.Rows.Count; i++)
+            for (int i = 0; i < MATERIAL_VIEW.Rows.Count-1; i++)
             {
-                if (MATERIAL_VIEW.Rows[i].Cells[0].Value == null)
-                {
-                    break;
-                }
+
                 String[] data = new string[5];
                 for (int j = 0; j < MATERIAL_VIEW.Rows[i].Cells.Count; j++)
                 {

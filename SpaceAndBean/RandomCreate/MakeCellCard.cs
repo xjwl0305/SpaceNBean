@@ -18,8 +18,7 @@ namespace SpaceAndBean.RandomCreate
                     break;
                 }
             }
-            
-            
+
             //material이랑 surface랑 매칭시켜야함
             var cellCardArray = new ArrayList();
             int surfaceCardCount = surfaceCardArray.Count - startIndex;
@@ -39,6 +38,8 @@ namespace SpaceAndBean.RandomCreate
 
             for (int i = 0; i < surfaceCardCount; i++)
             {
+                
+                
                 int randomIndex = 0;
                 if(checkSurfaceArrayList.Count <= 1)
                     randomIndex = 0;
@@ -47,19 +48,12 @@ namespace SpaceAndBean.RandomCreate
                 int indexSurface = (int)checkSurfaceArrayList[randomIndex];
                 checkSurfaceArrayList.RemoveAt(randomIndex);
 
-
-                int randomIndex1 = 0;
-                if (checkMaterialArrayList.Count <= 1)
-                {
-                    randomIndex1 = 0;
-                }
-                else
-                    randomIndex1 = random1.Next(0, checkMaterialArrayList.Count - 1);
-                int indexMaterial = (int)checkMaterialArrayList[randomIndex1];
-                checkMaterialArrayList.RemoveAt(randomIndex1);
                 
-                String material = ((String[])materialCardArray[indexMaterial])[0].Replace("m", "");
-                String density = ((String[])materialCardArray[indexMaterial])[3];
+                int materialIndex = Int32.Parse(((String[])surfaceCardArray[indexSurface])[12]);
+                
+                
+                String material = ((String[])materialCardArray[materialIndex])[0].Replace("m", "");
+                String density = ((String[])materialCardArray[materialIndex])[3];
                 String px1 = ((String[])surfaceCardArray[indexSurface])[0];
                 String px2 = "-" + ((String[])surfaceCardArray[indexSurface])[2];
                 String py1 = ((String[])surfaceCardArray[indexSurface])[4];

@@ -97,13 +97,13 @@ namespace SpaceAndBean
             // 
             // M_MAT_DEN
             // 
-            this.M_MAT_DEN.HeaderText = "M_MAT_DEN";
+            this.M_MAT_DEN.HeaderText = "M_MAT_Density";
             this.M_MAT_DEN.Name = "M_MAT_DEN";
             this.M_MAT_DEN.Width = 130;
             // 
             // M_ANNO
             // 
-            this.M_ANNO.HeaderText = "M_ANNO";
+            this.M_ANNO.HeaderText = "M_MAT_SHIELD";
             this.M_ANNO.Name = "M_ANNO";
             this.M_ANNO.Width = 130;
             // 
@@ -342,7 +342,7 @@ namespace SpaceAndBean
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(974, 711);
+            this.ClientSize = new System.Drawing.Size(995, 711);
             this.Controls.Add(this.tally14Text);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tally4Text);
