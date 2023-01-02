@@ -78,6 +78,7 @@ namespace SpaceAndBean
             //String basic_path = @"C:\basic_File\a_ne_2.txt";
             //ReadBasic(basic_path);
             //AutoExec.Change_To_CSV(); 
+            //AutoExec.Exec_MCNP();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MaterialInputForm());

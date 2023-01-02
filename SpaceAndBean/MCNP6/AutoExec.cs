@@ -23,20 +23,27 @@ namespace SpaceAndBean.MCNP6
         public static ArrayList path_list = new ArrayList();
         public static void Exec_MCNP()
         {
-            //watcher.Created += FileSystemWatcher_Created;
+            // 파일 생성 감지
+            FileSystemWatcher watcher = new FileSystemWatcher(@"C:\result_File\");
+            watcher.Created += FileSystemWatcher_Created;
+            watcher.Filter = "*.txt";
+            watcher.IncludeSubdirectories = true;
+            watcher.EnableRaisingEvents = true;
             ProcessStartInfo MCNP = new ProcessStartInfo();
             MCNP.FileName = "C:\\Windows\\System32\\cmd.exe";
             MCNP.Arguments = "/K %HOMEDRIVE%%HOMEPATH%\\mcnp_env_620.bat";
             MCNP.RedirectStandardInput = true;
             MCNP.RedirectStandardOutput = true;
             MCNP.RedirectStandardError = true;
-            //MCNP.CreateNoWindow = true;
+            MCNP.CreateNoWindow = true;
             MCNP.Verb = "runas";
             MCNP.UseShellExecute = false;
             //MCNP.UserName = "RWIZ";
             
-            
-            for (int i = 0; i < 10; i++)
+            p = Process.Start(MCNP);
+            myStreamWriter = p.StandardInput;
+            Exec_command();
+            /*for (int i = 0; i < 10; i++)
             {
                 p = Process.Start(MCNP);
                 using (StreamWriter myStreamWriter = p.StandardInput)
@@ -80,13 +87,51 @@ namespace SpaceAndBean.MCNP6
             
             //최적해만 csv 출력합니다.
             Change_To_CSV((String)path_list[minIndex]);
-            
+            */
             /*
             foreach (string path in path_list)
             {
                 Change_To_CSV(path);
             }
             */
+        }
+
+        public static void Exec_command()
+        {
+            myStreamWriter.WriteLine("mcnp6 i=" + Program.outputFilePath + " o=C:\\result_File\\" +
+                                     Path.GetFileName(Program.outputFilePath));
+            /*using (StreamWriter myStreamWriter = p.StandardInput)
+            {
+                myStreamWriter.WriteLine("mcnp6 i=" + Program.outputFilePath + " o=C:\\result_File\\" +
+                                         Path.GetFileName(Program.outputFilePath));
+            }*/
+            path_list.Add(Program.outputFilePath);
+        }
+        
+        public static void FileSystemWatcher_Created(object sender, FileSystemEventArgs e)
+        {
+            Program.CellCardArrayList = MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
+            SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
+                Program.TallyCardArrayList);
+            
+            // 유클리드 거리 계산
+            double minDistance =
+                GetDistance.Get((String)path_list[0], Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float), Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
+            int minIndex = 0;
+            for (int i = 1; i < path_list.Count; i++)
+            {
+                double distance =
+                    GetDistance.Get((String)path_list[i], Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float), Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    minIndex = i;
+                }
+            }
+            
+            //최적해만 csv 출력합니다.
+            Change_To_CSV((String)path_list[minIndex]);
+            Exec_command();
         }
         
         public static void Change_To_CSV(string path)

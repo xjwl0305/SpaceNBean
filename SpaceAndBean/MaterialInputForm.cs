@@ -13,11 +13,8 @@ namespace SpaceAndBean
             InitializeComponent();
             MaterialInputForm_Load();
         }
-
         private void MaterialInputForm_Load()
         {
-            
-            
             /*
             for (int i = 0; i < Program.material_cards_basic.Count; i++)
             {
@@ -26,7 +23,6 @@ namespace SpaceAndBean
             }
             */
         }
-
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.material_cards_basic.Clear();
@@ -38,7 +34,6 @@ namespace SpaceAndBean
             // 테이블 요소들을 다음 Form에 전달해야 함.
             for (int i = 0; i < MATERIAL_VIEW.Rows.Count-1; i++)
             {
-
                 String[] data = new string[5];
                 for (int j = 0; j < MATERIAL_VIEW.Rows[i].Cells.Count; j++)
                 {
@@ -50,7 +45,6 @@ namespace SpaceAndBean
                     {
                         data[j] = MATERIAL_VIEW.Rows[i].Cells[j].Value.ToString();
                     }
-                    
                 }
                 Program.MaterialCardArrayList.Add(data);
             }

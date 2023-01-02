@@ -120,7 +120,7 @@ namespace SpaceAndBean.IO
             {
                 String[] row = (String[])surfaceCardRow[i];
                 String[] data = new string[12];
-                for (int j = 0; j < row.Length; j++)
+                for (int j = 0; j < row.Length-1; j++)
                 {
                     //빈칸검사
                     if (row[j] == null) data[j] = "";
@@ -160,7 +160,6 @@ namespace SpaceAndBean.IO
                     if (row[j] == null) data[j] = "";
                     else data[j] = row[j].Trim();
                 }
-
                 if (i > 0 && data[0] == ((String[])materialCardRow[i-1])[0])
                 {
                     String str = String.Format("         {0} {1} {2} {3}", data[1], data[2], data[3], data[4]);

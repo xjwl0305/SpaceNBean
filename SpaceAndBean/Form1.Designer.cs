@@ -31,6 +31,18 @@ namespace SpaceAndBean
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CELL_CARD = new System.Windows.Forms.Label();
             this.CELL_CARD_VIEW = new System.Windows.Forms.DataGridView();
             this.CELL_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +67,7 @@ namespace SpaceAndBean
             this.PZ1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUF_NUM_PZ2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PZ2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATERIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MATERIAL_CARD = new System.Windows.Forms.Label();
             this.MATERIAL_VIEW = new System.Windows.Forms.DataGridView();
             this.M_MAT_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,11 +103,35 @@ namespace SpaceAndBean
             // 
             // CELL_CARD_VIEW
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CELL_CARD_VIEW.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.CELL_CARD_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CELL_CARD_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.CELL_NUM, this.MAT_NUM, this.MAT_DEN, this.SUF_COM, this.IMP_P, this.IMP_N, this.IMP_E, this.ANNO });
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CELL_CARD_VIEW.DefaultCellStyle = dataGridViewCellStyle2;
             this.CELL_CARD_VIEW.Location = new System.Drawing.Point(30, 64);
             this.CELL_CARD_VIEW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CELL_CARD_VIEW.Name = "CELL_CARD_VIEW";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CELL_CARD_VIEW.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.CELL_CARD_VIEW.RowTemplate.Height = 23;
             this.CELL_CARD_VIEW.Size = new System.Drawing.Size(805, 328);
             this.CELL_CARD_VIEW.TabIndex = 13;
@@ -149,11 +186,35 @@ namespace SpaceAndBean
             // 
             // SURFACE_VIEW
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SURFACE_VIEW.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.SURFACE_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SURFACE_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.index, this.category, this.SUF_NUM_PX2, this.value, this.SUF_NUM_PY1, this.PY1, this.SUF_NUM_PY2, this.PY2, this.SUF_NUM_PZ1, this.PZ1, this.SUF_NUM_PZ2, this.PZ2 });
+            this.SURFACE_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.index, this.category, this.SUF_NUM_PX2, this.value, this.SUF_NUM_PY1, this.PY1, this.SUF_NUM_PY2, this.PY2, this.SUF_NUM_PZ1, this.PZ1, this.SUF_NUM_PZ2, this.PZ2, this.MATERIAL });
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SURFACE_VIEW.DefaultCellStyle = dataGridViewCellStyle5;
             this.SURFACE_VIEW.Location = new System.Drawing.Point(30, 506);
             this.SURFACE_VIEW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SURFACE_VIEW.Name = "SURFACE_VIEW";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SURFACE_VIEW.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.SURFACE_VIEW.RowTemplate.Height = 23;
             this.SURFACE_VIEW.Size = new System.Drawing.Size(806, 364);
             this.SURFACE_VIEW.TabIndex = 15;
@@ -218,6 +279,11 @@ namespace SpaceAndBean
             this.PZ2.HeaderText = "PZ2";
             this.PZ2.Name = "PZ2";
             // 
+            // MATERIAL
+            // 
+            this.MATERIAL.HeaderText = "MATERIAL";
+            this.MATERIAL.Name = "MATERIAL";
+            // 
             // MATERIAL_CARD
             // 
             this.MATERIAL_CARD.Location = new System.Drawing.Point(18, 924);
@@ -228,11 +294,35 @@ namespace SpaceAndBean
             // 
             // MATERIAL_VIEW
             // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MATERIAL_VIEW.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.MATERIAL_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MATERIAL_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.M_MAT_NUM, this.MAT_ATOM_INDEX, this.MAT_ATOM_QTY, this.M_MAT_DEN, this.M_ANNO });
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MATERIAL_VIEW.DefaultCellStyle = dataGridViewCellStyle8;
             this.MATERIAL_VIEW.Location = new System.Drawing.Point(30, 973);
             this.MATERIAL_VIEW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MATERIAL_VIEW.Name = "MATERIAL_VIEW";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MATERIAL_VIEW.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.MATERIAL_VIEW.RowTemplate.Height = 23;
             this.MATERIAL_VIEW.Size = new System.Drawing.Size(798, 392);
             this.MATERIAL_VIEW.TabIndex = 17;
@@ -277,11 +367,35 @@ namespace SpaceAndBean
             // 
             // TALLY_VIEW
             // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TALLY_VIEW.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.TALLY_VIEW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TALLY_VIEW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.TALLY_INDEX, this.TALLY_PAR, this.TALLY_IMP });
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TALLY_VIEW.DefaultCellStyle = dataGridViewCellStyle11;
             this.TALLY_VIEW.Location = new System.Drawing.Point(30, 1455);
             this.TALLY_VIEW.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TALLY_VIEW.Name = "TALLY_VIEW";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TALLY_VIEW.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.TALLY_VIEW.RowTemplate.Height = 23;
             this.TALLY_VIEW.Size = new System.Drawing.Size(798, 210);
             this.TALLY_VIEW.TabIndex = 19;
@@ -388,7 +502,7 @@ namespace SpaceAndBean
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(100, 100);
             this.AutoScrollMinSize = new System.Drawing.Size(200, 200);
-            this.ClientSize = new System.Drawing.Size(941, 669);
+            this.ClientSize = new System.Drawing.Size(991, 708);
             this.Controls.Add(this.TALLY_DEL);
             this.Controls.Add(this.TALLY_ADD);
             this.Controls.Add(this.SURFACE_DEL);
@@ -414,6 +528,8 @@ namespace SpaceAndBean
             ((System.ComponentModel.ISupportInitialize)(this.TALLY_VIEW)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATERIAL;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PX2;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUF_NUM_PY1;
