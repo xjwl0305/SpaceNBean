@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
+using SpaceAndBean.MCNP6;
 
 namespace SpaceAndBean.IO
 {
@@ -31,14 +33,15 @@ namespace SpaceAndBean.IO
         
         public static String Save(ArrayList cellCardRow,  ArrayList surfaceCardRow,  ArrayList materialCardRow,  ArrayList tallyCardRow)
         {
+            Thread.Sleep(1000);
             DateTime today = DateTime.Today;
             String filename = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss"); 
             //String filename = String.Format("{0}_{1}_{2}_{3}_{4}_{5}.txt", 
             //    today.Year.ToString(), today.Month.ToString(), today.Day.ToString(), today.Hour.ToString(), today.Minute.ToString(), today.Second.ToString());
             
-            String savePath = @Program.outputFileDir + @"\" + @filename + @"_result.txt";
-            Program.outputFilePath = @Program.outputFileDir +@"\" + @filename + @"_result.txt";
-            String resultPath = @"C:\result_File\" + @filename + @"_result.txt";
+            String savePath = @Program.inputPathDir + @"\" + @filename + @"_result.txt";
+            Program.inputFilePath = @Program.inputPathDir +@"\" + @filename + @"_result.txt";
+            String resultPath = @Program.resultPathDir + @filename + @"_result.txt";
             
             FileStream fs = new FileStream(savePath, FileMode.OpenOrCreate);
             StreamWriter sw = new StreamWriter(fs);
@@ -127,7 +130,11 @@ namespace SpaceAndBean.IO
                     else data[j] = row[j].Trim();
                 }
                 sw.WriteLine("{0}     pz {1}", data[8], data[9]);
-                sw.WriteLine("{0}     pz {1}", data[10], data[11]);
+                if (i == surfaceCardRow.Count - 1)
+                {
+                    sw.WriteLine("{0}     pz {1}", data[10], data[11]);
+                }
+                
                 
             }
 
@@ -138,6 +145,13 @@ namespace SpaceAndBean.IO
             for (int i = 0; i < Program.DataCardBasic.Count; i++)
             {
                 sw.WriteLine((String)Program.DataCardBasic[i]);
+            }
+            
+            //Source cards
+            sw.WriteLine("c source cards");
+            for (int i = 0; i < Program.SourceCardBasic.Count; i++)
+            {
+                sw.WriteLine((String)Program.SourceCardBasic[i]);
             }
             
             //Material Card
@@ -162,12 +176,12 @@ namespace SpaceAndBean.IO
                 }
                 if (i > 0 && data[0] == ((String[])materialCardRow[i-1])[0])
                 {
-                    String str = String.Format("         {0} {1} {2} {3}", data[1], data[2], data[3], data[4]);
+                    String str = String.Format("         {0} {1}", data[1], data[2]);
                     sw.WriteLine(str);
                 }
                 else
                 {
-                    String str = String.Format("{0}     {1} {2} {3} {4}", data[0], data[1], data[2], data[3], data[4]);
+                    String str = String.Format("{0}     {1} {2}", data[0], data[1], data[2]);
                     sw.WriteLine(str);
                 }
 
@@ -200,16 +214,6 @@ namespace SpaceAndBean.IO
             
             sw.Close();
             fs.Close();
-                
-            try
-            {
-                
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message.ToString() );
-            }
-
 
             return savePath;
         }
