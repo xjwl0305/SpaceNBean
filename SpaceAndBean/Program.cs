@@ -36,13 +36,16 @@ namespace SpaceAndBean
         public static ArrayList TallyCardArrayList = new ArrayList();
         
         public static String[] var_inputs = new String[6];
+        public static String basicFilePath = null;
         public static String inputFilePath = null;
-        public static String outputFilePath = null;
-        public static String outputFileDir = null;
+        public static String inputPathDir = null;
+        public static String resultPathDir = null;
+        public static String excelPathDir = null;
 
         public static String tally4 = null;
         public static String tally14 = null;
         public static String m1Density = null;
+        public static String executeNum = null;
         
         /// <summary>
         /// The main entry point for the application.
@@ -50,18 +53,13 @@ namespace SpaceAndBean
         [STAThread]
         static void Main()
         {
-            DirectoryInfo di = new DirectoryInfo(@"C:\input_File");
-            DirectoryInfo di2 = new DirectoryInfo(@"C:\output_File");
-            DirectoryInfo di3 = new DirectoryInfo(@"C:\basic_File");
-            DirectoryInfo di4 = new DirectoryInfo(@"C:\result_File");
-            DirectoryInfo di5 = new DirectoryInfo(@"C:\excel_File");
+            DirectoryInfo di = new DirectoryInfo(@"C:\mcnp6_auto\input_File");
+            DirectoryInfo di3 = new DirectoryInfo(@"C:\mcnp6_auto\basic_File");
+            DirectoryInfo di4 = new DirectoryInfo(@"C:\mcnp6_auto\result_File");
+            DirectoryInfo di5 = new DirectoryInfo(@"C:\mcnp6_auto\excel_File");
             if (di.Exists == false)
             {
                 di.Create();
-            }
-            if (di2.Exists == false)
-            {
-                di2.Create();
             }
             if (di3.Exists == false)
             {
@@ -114,8 +112,8 @@ namespace SpaceAndBean
             double pzStart = Double.Parse(var_inputs[4]);
             double pzEnd = Double.Parse(var_inputs[5]);
 
-            SurfaceCardArrayList.AddRange(MakeSurfaceCard.Make(MaterialCardArrayList, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd));
-            CellCardArrayList.AddRange(MakeCellCard.Make(MaterialCardArrayList, SurfaceCardArrayList));
+            SurfaceCardArrayList = MakeSurfaceCard.Make(MaterialCardArrayList, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd);
+            CellCardArrayList = MakeCellCard.Make(MaterialCardArrayList, SurfaceCardArrayList);
         }
         
         

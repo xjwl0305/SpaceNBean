@@ -27,9 +27,11 @@ namespace SpaceAndBean
         {
             Program.material_cards_basic.Clear();
             Program.MaterialCardArrayList.Clear();
-            Program.inputFilePath = @inputPath.Text.ToString();
-            Program.outputFileDir = @outputPath.Text.ToString();
-            Program.ReadBasic(@Program.inputFilePath);
+            Program.basicFilePath = basicFileTextBox.Text;
+            Program.inputPathDir = inputPathTextBox.Text;
+            Program.resultPathDir = resultPathTextBox.Text;
+            Program.excelPathDir = excelPathTextBox.Text;
+            Program.ReadBasic(@Program.basicFilePath);
 
             // 테이블 요소들을 다음 Form에 전달해야 함.
             for (int i = 0; i < MATERIAL_VIEW.Rows.Count-1; i++)
@@ -59,6 +61,7 @@ namespace SpaceAndBean
             Program.tally4 = tally4Text.Text;
             Program.tally14 = tally14Text.Text;
             Program.m1Density = m1DensityText.Text;
+            Program.executeNum = executeNumberTextBox.Text;
             
             Form1 form1 = new Form1();
             form1.ShowDialog();
@@ -96,7 +99,7 @@ namespace SpaceAndBean
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //Get the path of specified file
-                    inputPath.Text = openFileDialog.FileName;
+                    basicFileTextBox.Text = openFileDialog.FileName;
                 }
                 
             }
@@ -107,7 +110,25 @@ namespace SpaceAndBean
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                outputPath.Text = fbd.SelectedPath;
+                inputPathTextBox.Text = fbd.SelectedPath;
+            }
+        }
+        
+        private void resultPathSelectorButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                resultPathTextBox.Text = fbd.SelectedPath;
+            }
+        }
+        
+        private void excelPathSelectorButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                excelPathTextBox.Text = fbd.SelectedPath;
             }
         }
         
