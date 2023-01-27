@@ -39,9 +39,10 @@ namespace SpaceAndBean.IO
             //String filename = String.Format("{0}_{1}_{2}_{3}_{4}_{5}.txt", 
             //    today.Year.ToString(), today.Month.ToString(), today.Day.ToString(), today.Hour.ToString(), today.Minute.ToString(), today.Second.ToString());
             
-            String savePath = @Program.inputPathDir + @"\" + @filename + @"_result.txt";
-            Program.inputFilePath = @Program.inputPathDir +@"\" + @filename + @"_result.txt";
-            String resultPath = @Program.resultPathDir + @filename + @"_result.txt";
+            String savePath = @Program.inputPathDir + @"\" + @filename + @"_input.txt";
+            Program.inputFilePath = @Program.inputPathDir +@"\" + @filename + @"_input.txt";
+            String resultPath = @Program.resultPathDir + @"\" + @filename + @"_result.txt";
+            Program.resultFilePath = resultPath;
             
             FileStream fs = new FileStream(savePath, FileMode.OpenOrCreate);
             StreamWriter sw = new StreamWriter(fs);
@@ -51,7 +52,7 @@ namespace SpaceAndBean.IO
 
             //파일이름
             sw.WriteLine(filename.Split('.')[0]);
-            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @savePath, resultPath);
+            sw.WriteLine("c mcnp6 i={0} o={1} $ exe command ", @savePath, @resultPath);
             
             //input, output 경로 정의
 

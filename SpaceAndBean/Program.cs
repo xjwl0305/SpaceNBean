@@ -38,6 +38,7 @@ namespace SpaceAndBean
         public static String[] var_inputs = new String[6];
         public static String basicFilePath = null;
         public static String inputFilePath = null;
+        public static String resultFilePath = null;
         public static String inputPathDir = null;
         public static String resultPathDir = null;
         public static String excelPathDir = null;
@@ -119,6 +120,14 @@ namespace SpaceAndBean
         
         public static void ReadBasic(String basic_path)
         {
+            input_data.Clear();
+            cell_cards_basic.Clear();
+            surface_cards_basic.Clear();
+            data_cards_basic.Clear();
+            source_cards_basic.Clear();
+            material_cards_basic.Clear();
+            tally_cards_basic.Clear();
+            
             // basic file 한줄 씩 읽기
             StreamReader sr = new StreamReader(@basic_path);
             String input_file_name = "input_"+DateTime.Now.ToString("yyyy-MM-dd_hh:mm:ss");

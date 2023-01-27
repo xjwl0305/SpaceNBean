@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -17,7 +16,8 @@ namespace SpaceAndBean.MCNP6
 {
     public class AutoExec
     {
-        public static int Exec_count = 0;
+        public static int Exec_count = 1;
+        public static int Done_count = 0;
         public static Process p = new Process();
         public static StreamWriter myStreamWriter;
         public static ProcessStartInfo MCNP;
@@ -28,7 +28,7 @@ namespace SpaceAndBean.MCNP6
         public static void Exec_MCNP()
         {
             // 파일 생성 감지
-            EXEC_COUNT = Int32.Parse(Program.executeNum);
+            EXEC_COUNT = Int32.Parse(Program.executeNum) - 1;
             NorisProgress = new NorisProgress(0, EXEC_COUNT+1,"Init..");
             NorisProgress.Show();
             watcher = new FileSystemWatcher(@Program.resultPathDir+@"\");
@@ -104,6 +104,64 @@ namespace SpaceAndBean.MCNP6
             */
         }
 
+        public static void mcnpProcess_Exited(object sender, EventArgs e)
+        {
+            
+            Done_count += 1;
+            if (Done_count >= EXEC_COUNT + 1)
+            {
+                try
+                {
+                    double minDistance =
+                        GetDistance.Get((String)path_list[0],
+                            Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float),
+                            Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
+
+                    int minIndex = 0;
+                    for (int i = 1; i < path_list.Count; i++)
+                    {
+                        double distance =
+                            GetDistance.Get((String)path_list[i],
+                                Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float),
+                                Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
+                        if (distance < 0)
+                        {
+                            continue;
+                        }
+
+                        if (distance < minDistance)
+                        {
+                            minDistance = distance;
+                            minIndex = i;
+                        }
+                    }
+
+                    //최적해만 csv 출력합니다.
+                    MessageBox.Show("최적해 저장완료!", "Norispace", MessageBoxButtons.OK);
+                    Change_To_CSV((String)path_list[minIndex]);
+                    
+                    path_list.Clear();
+                    Exec_count = 1;
+                    Done_count = 0;
+                    return;
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+                
+            }
+            else
+            {
+                if (NorisProgress != null && NorisProgress.IsAccessible)
+                {
+                    NorisProgress.update("Calculate " + Path.GetFileName((String)path_list[Done_count]), 1);
+                }
+                
+            }
+            
+        }
+
         public static void Exec_command()
         {
 
@@ -111,15 +169,20 @@ namespace SpaceAndBean.MCNP6
             {
                 // 유클리드 거리 계산
                 NorisProgress.Close();
-                NorisProgress = new NorisProgress(0, EXEC_COUNT+1, "Init..");
+                /*
+                NorisProgress = new NorisProgress(0, EXEC_COUNT+1, "Wait For Mcnp6...");
                 NorisProgress.Show();
-                NorisProgress.update("Calculate " + Path.GetFileName((String)path_list[0]), 1);
-
-                while (!Access.IsAccessAble((String)path_list[0]))
+                Process[] processes = Process.GetProcessesByName("mcnp6");
+                //!Access.IsAccessAble((String)path_list[0])
+                while (processes.Length > 0)
                 {
                     Application.DoEvents();
                     Thread.Sleep(100);
+                    processes = Process.GetProcessesByName("mcnp6");
                 }
+                
+                NorisProgress.update("Calculate " + Path.GetFileName((String)path_list[0]), 1);
+                
                 
                 double minDistance =
                     GetDistance.Get((String)path_list[0],
@@ -161,21 +224,38 @@ namespace SpaceAndBean.MCNP6
                 
                 //최적해만 csv 출력합니다.
                 Change_To_CSV((String)path_list[minIndex]);
+                */
                 watcher.Created -= FileSystemWatcher_Created;
-                MessageBox.Show("Done");
+                //MessageBox.Show("Done");
+                NorisProgress = new NorisProgress(0, EXEC_COUNT+1, "Wait For Mcnp6...");
+                NorisProgress.Show();
+                while (Done_count < EXEC_COUNT)
+                {
+                    Application.DoEvents();
+                }
+                NorisProgress.Close();
+                NorisProgress = null;
+                //NorisProgress.update("Calculate " + Path.GetFileName((String)path_list[0]), 1);
                 return;
                 
             }
             
             p = Process.Start(MCNP);
+            p.EnableRaisingEvents = true;
+            p.Exited += mcnpProcess_Exited;
             
             myStreamWriter = p.StandardInput;
             NorisProgress.update("mcnp6 "+Path.GetFileName(Program.inputFilePath),1);
-            myStreamWriter.WriteLine("del runt*");
+            if (Exec_count == 1)
+            {
+                myStreamWriter.WriteLine("del runt*");
+            }
             myStreamWriter.WriteLine("cmd /k %HOMEDRIVE%%HOMEPATH%\\mcnp_env_620.bat");
-            myStreamWriter.WriteLine("mcnp6 i=" + Program.inputFilePath + " o=" + @Program.resultPathDir + "\\" + Path.GetFileName(Program.inputFilePath));
+            myStreamWriter.WriteLine("mcnp6 i=" + @Program.inputFilePath + " o=" + @Program.resultFilePath);
+            myStreamWriter.WriteLine("exit");
+            myStreamWriter.Close();
             
-            path_list.Add(@Program.resultPathDir + "\\" + Path.GetFileName(Program.inputFilePath));
+            path_list.Add(@Program.resultPathDir + "\\" + Path.GetFileName(Program.resultFilePath));
             
             
             
@@ -199,15 +279,19 @@ namespace SpaceAndBean.MCNP6
                 double pzStart = Double.Parse(Program.var_inputs[4]);
                 double pzEnd = Double.Parse(Program.var_inputs[5]);
 
-                Program.SurfaceCardArrayList = MakeSurfaceCard.Make(Program.MaterialCardArrayList, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd);
-                Program.CellCardArrayList =
-                    MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
-                SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
-                    Program.TallyCardArrayList);
-                
+                if (Exec_count <= EXEC_COUNT)
+                {
+                    Program.SurfaceCardArrayList = MakeSurfaceCard.Make(Program.MaterialCardArrayList, pxStart, pxEnd, pyStart, pyEnd, pzStart, pzEnd);
+                    Program.CellCardArrayList =
+                        MakeCellCard.Make(Program.MaterialCardArrayList, Program.SurfaceCardArrayList);
+                    SaveInput.Save(Program.CellCardArrayList, Program.SurfaceCardArrayList, Program.MaterialCardArrayList,
+                        Program.TallyCardArrayList);
+                }
+
                 //Delay(3000);
-                Exec_count += 1;
                 Exec_command();
+                Exec_count += 1;
+                
             }
             catch (Exception e1)
             {

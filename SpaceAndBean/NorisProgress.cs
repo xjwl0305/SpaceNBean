@@ -20,9 +20,12 @@ namespace SpaceAndBean
             label1.Text = label;
             
         }
-
         public void update(String label, int increasment)
         {
+            if (progreddssBar1.Value + increasment > progreddssBar1.Maximum)
+            {
+                return;
+            }
             label1.Text = label;
             progreddssBar1.Value += increasment;
         }
