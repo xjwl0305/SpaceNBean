@@ -47,6 +47,7 @@ namespace SpaceAndBean
         public static String tally14 = null;
         public static String m1Density = null;
         public static String executeNum = null;
+        public static String nps = null;
         
         /// <summary>
         /// The main entry point for the application.
@@ -127,7 +128,13 @@ namespace SpaceAndBean
             source_cards_basic.Clear();
             material_cards_basic.Clear();
             tally_cards_basic.Clear();
-            
+            TallyCardBasic.Clear();
+            CellCardBasic.Clear();
+            SurfaceCardBasic.Clear();
+            DataCardBasic.Clear();
+            SourceCardBasic.Clear();
+            MaterialCardBasic.Clear();
+
             // basic file 한줄 씩 읽기
             StreamReader sr = new StreamReader(@basic_path);
             String input_file_name = "input_"+DateTime.Now.ToString("yyyy-MM-dd_hh:mm:ss");
@@ -287,8 +294,18 @@ namespace SpaceAndBean
                 {
                     TallyCardBasic.Add(s);
                     string[] words = s.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
+                    if (words[0] == "NPS")
+                    {
+                        //MessageBox.Show(words[1]);
+                        nps = words[1];
+                    }
                     tally_cards_basic.Add(words);
                 }
+            }
+
+            if (nps == null)
+            {
+                MessageBox.Show("NPS 값을 불러올 수 없습니다.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

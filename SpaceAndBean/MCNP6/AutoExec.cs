@@ -115,7 +115,7 @@ namespace SpaceAndBean.MCNP6
                     double minDistance =
                         GetDistance.Get((String)path_list[0],
                             Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float),
-                            Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
+                            Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), Program.nps);
 
                     int minIndex = 0;
                     for (int i = 1; i < path_list.Count; i++)
@@ -123,7 +123,7 @@ namespace SpaceAndBean.MCNP6
                         double distance =
                             GetDistance.Get((String)path_list[i],
                                 Decimal.Parse(Program.tally4, System.Globalization.NumberStyles.Float),
-                                Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), "1000000");
+                                Decimal.Parse(Program.tally14, System.Globalization.NumberStyles.Float), Program.nps);
                         if (distance < 0)
                         {
                             continue;
