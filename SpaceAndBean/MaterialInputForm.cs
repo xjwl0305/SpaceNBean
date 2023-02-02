@@ -25,6 +25,16 @@ namespace SpaceAndBean
         }
         private void NextButton_Click(object sender, EventArgs e)
         {
+            int n;
+            if (int.TryParse(executeNumberTextBox.Text, out n))
+            {
+                if (n <= 1)
+                {
+                    MessageBox.Show("실행횟수는 2회 이상이여야 합니다.", "Norispace", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            
             Program.material_cards_basic.Clear();
             Program.MaterialCardArrayList.Clear();
             Program.basicFilePath = basicFileTextBox.Text;
@@ -88,7 +98,6 @@ namespace SpaceAndBean
 
         private void inputButton_Click(object sender, EventArgs e)
         {
-
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
